@@ -31,10 +31,26 @@ Extra credits
     6. Allow sharing the photo
 ```
 
-## Packages Used
-
+## Resources Used
+Packages:
+```
+# For API calls
+http: ^0.13.4
+# For various grid layouts
+flutter_staggered_grid_view: ^0.6.1
+# For compact representation of a placeholder for an image
+flutter_blurhash: ^0.7.0
 ```
 
+UI from Dribbble:
+```
+https://dribbble.com/shots/17309162-Photo-Gallery-App
+```
+
+Fonts:
+```
+Comfortaa: https://fonts.google.com/specimen/Comfortaa
+Quicksand: https://fonts.google.com/specimen/Quicksand
 ```
 
 ## App Demo

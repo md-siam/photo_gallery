@@ -34,7 +34,23 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Text('Home Page'),
+            Text(
+              'Comfortaa Font Test',
+              style: TextStyle(
+                fontSize: 40,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              'Quicksand Font Test',
+              style: TextStyle(
+                fontSize: 40,
+                fontFamily: 'Quicksand',
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ],
         ),
       ),
