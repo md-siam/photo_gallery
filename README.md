@@ -1,16 +1,47 @@
-# photo_gallery
+<img src="screenshots/badges/built-with-love.svg" height="28px"/>&nbsp;&nbsp;
+<img src="screenshots/badges/flutter-dart.svg" height="28px" />&nbsp;&nbsp;
+<a href="https://choosealicense.com/licenses/mit/" target="_blank"><img src="screenshots/badges/license-MIT.svg" height="28px" /></a>&nbsp;&nbsp;
+<img src="screenshots/badges/Flutter-3.svg" height="28px" />&nbsp;&nbsp;
+<img src="screenshots/badges/dart-null_safety-blue.svg" height="28px"/>
+<img align="right" src="screenshots/store_icons/playstore.png" height="200"></img>
 
-A new Flutter project.
+# Photo Gallery
 
-## Getting Started
+In this assignment, you are required to create a simple Android/iOS/Flutter/ReactNative app that displays a list of photos as a gallery. Users can tap the photo to see a full-screen view of it with the possibility to zoom in and out.
 
-This project is a starting point for a Flutter application.
+```
+Requirements:
+    1. Use Unsplash API Documentation | List of Photos to get a list of photos and build a gallery of photos
+    2. The user can tap the photo and can see a full-screen view of the photo
+    3. The user has an infinite scroll on the gallery screen
 
-A few resources to get you started if this is your first Flutter project:
+User Interface (UI)
+    Part of this challenge is to design the UI for this app.
+    You are free to create the UI as you see fit as long as the app meets the requirements.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Extra credits
+    You are encouraged to extend this project and add features as you see fit.
+    Our suggestion is that these extensions should add to, not subtract from, the user's experience.
+    1. Unit tests
+    2. The app’s flavor/scheme can be changed easily so that changing from development API
+        to production API becomes trivial
+    3. Cache images
+    4. Cache API response
+    5. Allow saving photos in JPEG format to the local gallery
+    6. Allow sharing the photo
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Packages Used
+
+```
+
+```
+
+## App Demo
+
+
+## File Pattern Inside The `lib` Folder
+
+```
+
+```
