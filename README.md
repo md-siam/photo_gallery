@@ -6,8 +6,9 @@
 <img align="right" src="screenshots/store_icons/playstore.png" height="200"></img>
 
 # Photo Gallery
-
+<p align="justify" > 
 In this assignment, you are required to create a simple Android/iOS/Flutter/ReactNative app that displays a list of photos as a gallery. Users can tap the photo to see a full-screen view of it with the possibility to zoom in and out.
+</p>
 
 ```
 Requirements:
