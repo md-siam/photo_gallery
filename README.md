@@ -3,11 +3,13 @@
 <a href="https://choosealicense.com/licenses/mit/" target="_blank"><img src="screenshots/badges/license-MIT.svg" height="28px" /></a>&nbsp;&nbsp;
 <img src="screenshots/badges/Flutter-3.svg" height="28px" />&nbsp;&nbsp;
 <img src="screenshots/badges/dart-null_safety-blue.svg" height="28px"/>
-<img align="right" src="screenshots/store_icons/playstore.png" height="200"></img>
+<img align="right" src="screenshots/store_icons/playstore.png" height="150"></img>
 
 # Photo Gallery
 
-In this assignment, you are required to create a simple Android/iOS/Flutter/ReactNative app that displays a list of photos as a gallery. Users can tap the photo to see a full-screen view of it with the possibility to zoom in and out.
+<p align="justify" > 
+In this assignment, you are required to create a simple Android / iOS / Flutter / ReactNative app that displays a list of photos as a gallery. Users can tap the photo to see a full-screen view of it with the possibility to zoom in and out.
+</p>
 
 ```
 Requirements:
@@ -32,7 +34,9 @@ Extra credits
 ```
 
 ## Resources Used
+
 Packages:
+
 ```
 # For API calls
 http: ^0.13.4
@@ -43,11 +47,13 @@ flutter_blurhash: ^0.7.0
 ```
 
 UI from Dribbble:
+
 ```
 https://dribbble.com/shots/17309162-Photo-Gallery-App
 ```
 
 Fonts:
+
 ```
 Comfortaa: https://fonts.google.com/specimen/Comfortaa
 Quicksand: https://fonts.google.com/specimen/Quicksand
