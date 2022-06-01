@@ -3,7 +3,7 @@
 <a href="https://choosealicense.com/licenses/mit/" target="_blank"><img src="screenshots/badges/license-MIT.svg" height="28px" /></a>&nbsp;&nbsp;
 <img src="screenshots/badges/Flutter-3.svg" height="28px" />&nbsp;&nbsp;
 <img src="screenshots/badges/dart-null_safety-blue.svg" height="28px"/>
-<img align="right" src="screenshots/store_icons/playstore.png" height="150"></img>
+<img align="right" src="screenshots/store_icons/playstore.png" height="180"></img>
 
 # Photo Gallery
 
