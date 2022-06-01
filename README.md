@@ -35,7 +35,20 @@ Extra credits
 
 ## Resources Used
 
-Packages:
+UI from [Dribbble](https://dribbble.com):
+
+```
+https://dribbble.com/shots/17309162-Photo-Gallery-App
+```
+
+Fonts from [Google](https://fonts.google.com):
+
+```
+Comfortaa: https://fonts.google.com/specimen/Comfortaa
+Quicksand: https://fonts.google.com/specimen/Quicksand
+```
+
+Packages from [pub.dev](https://pub.dev/):
 
 ```
 # For API calls
@@ -44,19 +57,6 @@ http: ^0.13.4
 flutter_staggered_grid_view: ^0.6.1
 # For compact representation of a placeholder for an image
 flutter_blurhash: ^0.7.0
-```
-
-UI from Dribbble:
-
-```
-https://dribbble.com/shots/17309162-Photo-Gallery-App
-```
-
-Fonts:
-
-```
-Comfortaa: https://fonts.google.com/specimen/Comfortaa
-Quicksand: https://fonts.google.com/specimen/Quicksand
 ```
 
 ## App Demo
