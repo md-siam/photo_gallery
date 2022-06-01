@@ -3,12 +3,12 @@
 <a href="https://choosealicense.com/licenses/mit/" target="_blank"><img src="screenshots/badges/license-MIT.svg" height="28px" /></a>&nbsp;&nbsp;
 <img src="screenshots/badges/Flutter-3.svg" height="28px" />&nbsp;&nbsp;
 <img src="screenshots/badges/dart-null_safety-blue.svg" height="28px"/>
-<img align="right" src="screenshots/store_icons/playstore.png" height="160"></img>
+<img align="right" src="screenshots/store_icons/playstore.png" height="170"></img>
 
 # Photo Gallery
 
 <p align="justify" > 
-In this assignment, you are required to create a simple Android / iOS / Flutter / ReactNative app that displays a list of photos as a gallery. Users can tap the photo to see a full-screen view of it with the possibility to zoom in and out.
+In this assignment, you are required to create a simple Android / iOS / Flutter / React Native app that displays a list of photos as a gallery. Users can tap the photo to see a full-screen view of it with the possibility to zoom in and out.
 </p>
 
 ```
