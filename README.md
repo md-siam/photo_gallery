@@ -51,12 +51,14 @@ Quicksand: https://fonts.google.com/specimen/Quicksand
 Packages from [pub.dev](https://pub.dev/):
 
 ```
+# For state management
+  provider: ^6.0.3
 # For API calls
-http: ^0.13.4
+  http: ^0.13.4
 # For various grid layouts
-flutter_staggered_grid_view: ^0.6.1
-# For compact representation of a placeholder for an image
-flutter_blurhash: ^0.7.0
+  flutter_staggered_grid_view: ^0.6.1
+# For implementing the blurhash from the API
+  flutter_blurhash: ^0.7.0
 ```
 
 ## App Demo
