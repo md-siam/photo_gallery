@@ -6,6 +6,11 @@
 // https://choosealicense.com/licenses/mit/
 import 'package:flutter/material.dart';
 
+import 'app/layout/responsive_layout.dart';
+import 'app/views/desktop/desktop_view.dart';
+import 'app/views/mobile/mobile_view.dart';
+import 'app/views/tablet/tablet_view.dart';
+
 void main() {
   return runApp(const MyApp());
 }
@@ -28,31 +33,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Home Page')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text(
-              'Comfortaa Font Test',
-              style: TextStyle(
-                fontSize: 40,
-                fontFamily: 'Comfortaa',
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              'Quicksand Font Test',
-              style: TextStyle(
-                fontSize: 40,
-                fontFamily: 'Quicksand',
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
+    return const Scaffold(
+      body: ResponsiveLayout(
+        mobileBody: MobileView(),
+        tabletBody: TabletView(),
+        desktopBody: DesktopView(),
       ),
     );
   }
