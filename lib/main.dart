@@ -12,7 +12,9 @@ import 'app/views/mobile/mobile_view.dart';
 import 'app/views/tablet/tablet_view.dart';
 
 void main() {
-  return runApp(const MyApp());
+  return runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
