@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../layout/responsive_layout.dart';
 import '../views/views.dart';
 
-
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
 
@@ -12,8 +11,7 @@ class SplashView extends StatefulWidget {
   VideoState createState() => VideoState();
 }
 
-class VideoState extends State<SplashView>
-    with SingleTickerProviderStateMixin {
+class VideoState extends State<SplashView> with SingleTickerProviderStateMixin {
   var _visible = true;
 
   late AnimationController animationController;
@@ -55,6 +53,7 @@ class VideoState extends State<SplashView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF0B0B0A),
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -87,7 +86,6 @@ class VideoState extends State<SplashView>
     );
   }
 }
-
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);

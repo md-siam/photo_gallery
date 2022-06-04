@@ -76,7 +76,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/logo/
-  #   - images/a_dot_ham.jpeg
+    - assets/images/intro/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -93,9 +93,6 @@ flutter:
     - family: Comfortaa
       fonts:
         - asset: assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf
-    - family: Montserrat
-      fonts:
-        - asset: assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf
     - family: Quicksand
       fonts:
         - asset: assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf

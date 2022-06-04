@@ -10,7 +10,6 @@ import 'app/layout/responsive_layout.dart';
 import 'app/splash/splash_view.dart';
 import 'app/views/views.dart';
 
-
 void main() {
   return runApp(
     const MyApp(),
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
 }
 
 /// This [HomeView] widget is for testing
-///  
+///
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
 
