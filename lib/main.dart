@@ -30,16 +30,16 @@ class MyApp extends StatelessWidget {
         //secondaryHeaderColor: Colors.white10,
         //cardColor: Colors.black12,
       ),
-      //home: const HomeView(),
+      //home: const ResponsiveView(), //for testing purpose
       home: const SplashView(),
     );
   }
 }
 
-/// This [HomeView] widget is for testing
+/// This [ResponsiveView] widget is for testing purpose
 ///
-class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+class ResponsiveView extends StatelessWidget {
+  const ResponsiveView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

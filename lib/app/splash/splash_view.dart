@@ -25,7 +25,13 @@ class VideoState extends State<SplashView> with SingleTickerProviderStateMixin {
   void navigationPage() {
     Navigator.pushAndRemoveUntil(
       context,
-      MaterialPageRoute(builder: (BuildContext context) => const HomeView()),
+      MaterialPageRoute(
+        builder: (BuildContext context) => const ResponsiveLayout(
+          mobileBody: MobileView(),
+          tabletBody: TabletView(),
+          desktopBody: DesktopView(),
+        ),
+      ),
       (route) => false,
     );
   }
@@ -82,21 +88,6 @@ class VideoState extends State<SplashView> with SingleTickerProviderStateMixin {
             ],
           ),
         ],
-      ),
-    );
-  }
-}
-
-class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: ResponsiveLayout(
-        mobileBody: MobileView(),
-        tabletBody: TabletView(),
-        desktopBody: DesktopView(),
       ),
     );
   }
