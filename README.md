@@ -3,7 +3,7 @@
 <a href="https://choosealicense.com/licenses/mit/" target="_blank"><img src="screenshots/badges/license-MIT.svg" height="28px" /></a>&nbsp;&nbsp;
 <img src="screenshots/badges/Flutter-3.svg" height="28px" />&nbsp;&nbsp;
 <img src="screenshots/badges/dart-null_safety-blue.svg" height="28px"/>
-<img align="right" src="screenshots/store_icons/playstore.png" height="170"></img>
+<img align="right" src="screenshots/store_icons/playstore_new.png" height="170"></img>
 
 # Photo Gallery
 
@@ -41,7 +41,7 @@ UI from [Dribbble](https://dribbble.com):
 https://dribbble.com/shots/17309162-Photo-Gallery-App
 ```
 
-Fonts from [Google](https://fonts.google.com):
+Fonts from [Google Fonts](https://fonts.google.com):
 
 ```
 Comfortaa: https://fonts.google.com/specimen/Comfortaa
@@ -51,14 +51,16 @@ Quicksand: https://fonts.google.com/specimen/Quicksand
 Packages from [pub.dev](https://pub.dev/):
 
 ```
+# For API calls & image downloading
+  dio: ^4.0.6
 # For state management
   provider: ^6.0.3
-# For API calls
-  http: ^0.13.4
-# For various grid layouts
-  flutter_staggered_grid_view: ^0.6.1
+# For finding commonly used filesystem locations
+  path_provider: ^2.0.10
 # For implementing the blurhash from the API
   flutter_blurhash: ^0.7.0
+# For various grid layouts
+  flutter_staggered_grid_view: ^0.6.1
 ```
 
 ## App Demo
