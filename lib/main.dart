@@ -7,9 +7,9 @@
 import 'package:flutter/material.dart';
 
 import 'app/layout/responsive_layout.dart';
-import 'app/views/desktop/desktop_view.dart';
-import 'app/views/mobile/mobile_view.dart';
-import 'app/views/tablet/tablet_view.dart';
+import 'app/splash/splash_view.dart';
+import 'app/views/views.dart';
+
 
 void main() {
   return runApp(
@@ -24,14 +24,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Photo Gallery',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const HomePage(),
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        //backgroundColor: Colors.black26,
+        //secondaryHeaderColor: Colors.white10,
+        //cardColor: Colors.black12,
+      ),
+      //home: const HomeView(),
+      home: const SplashView(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+/// This [HomeView] widget is for testing
+///  
+class HomeView extends StatelessWidget {
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

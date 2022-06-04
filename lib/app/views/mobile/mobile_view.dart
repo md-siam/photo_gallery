@@ -6,7 +6,6 @@ class MobileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[300],
       appBar: AppBar(title: const Text('MOBILE')),
     );
   }
