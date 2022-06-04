@@ -70,11 +70,12 @@ class MobileView extends StatelessWidget {
                 Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => const ResponsiveLayout(
-                            mobileBody: MobileGallery(),
-                            tabletBody: TabletGallery(),
-                            desktopBody: DesktopGallery(),
-                          )),
+                    builder: (BuildContext context) => const ResponsiveLayout(
+                      mobileBody: MobileGallery(),
+                      tabletBody: TabletGallery(),
+                      desktopBody: DesktopGallery(),
+                    ),
+                  ),
                   (route) => false,
                 );
               },

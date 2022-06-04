@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../layout/responsive_layout.dart';
 import '../views.dart';
 
-
 class DesktopView extends StatelessWidget {
   const DesktopView({Key? key}) : super(key: key);
 
@@ -71,11 +70,12 @@ class DesktopView extends StatelessWidget {
                 Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => const ResponsiveLayout(
-                            mobileBody: MobileGallery(),
-                            tabletBody: TabletGallery(),
-                            desktopBody: DesktopGallery(),
-                          )),
+                    builder: (BuildContext context) => const ResponsiveLayout(
+                      mobileBody: MobileGallery(),
+                      tabletBody: TabletGallery(),
+                      desktopBody: DesktopGallery(),
+                    ),
+                  ),
                   (route) => false,
                 );
               },
