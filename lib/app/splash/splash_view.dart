@@ -23,10 +23,10 @@ class VideoState extends State<SplashView> with SingleTickerProviderStateMixin {
   }
 
   void navigationPage() {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => const HomeView(),
-      ),
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (BuildContext context) => const HomeView()),
+      (route) => false,
     );
   }
 
