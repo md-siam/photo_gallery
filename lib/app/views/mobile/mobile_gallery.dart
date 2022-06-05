@@ -16,7 +16,6 @@ class _MobileGalleryState extends State<MobileGallery> {
       size = MediaQuery.of(context).size.width;
     });
     return Scaffold(
-      backgroundColor: const Color(0xFF0B0B0A),
       appBar: AppBar(title: const Text('Mobile')),
       body: Center(
         child: Text(

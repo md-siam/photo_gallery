@@ -59,7 +59,6 @@ class VideoState extends State<SplashView> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0B0B0A),
       body: Stack(
         fit: StackFit.expand,
         children: [

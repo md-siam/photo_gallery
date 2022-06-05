@@ -16,7 +16,6 @@ class _TabletGalleryState extends State<TabletGallery> {
       size = MediaQuery.of(context).size.width;
     });
     return Scaffold(
-      backgroundColor: const Color(0xFF0B0B0A),
       appBar: AppBar(title: const Text('Tablet')),
       body: Center(
         child: Text(

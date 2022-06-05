@@ -26,17 +26,16 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        //backgroundColor: Colors.black26,
-        //secondaryHeaderColor: Colors.white10,
-        //cardColor: Colors.black12,
+        scaffoldBackgroundColor: const Color(0xFF0B0B0A),
       ),
-      //home: const ResponsiveView(), //for testing purpose
+      //home: const ResponsiveView(), ///for `testing` purpose
       home: const SplashView(),
     );
   }
 }
 
-/// This [ResponsiveView] widget is for testing purpose
+/// This [ResponsiveView] widget is for skipping the
+/// SplashView screen, hence it will reduce the development time.
 ///
 class ResponsiveView extends StatelessWidget {
   const ResponsiveView({Key? key}) : super(key: key);
