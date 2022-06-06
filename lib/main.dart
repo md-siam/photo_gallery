@@ -28,14 +28,15 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         scaffoldBackgroundColor: const Color(0xFF0B0B0A),
       ),
-      //home: const ResponsiveView(), ///for `testing` purpose
-      home: const SplashView(),
+      home: const ResponsiveView(), ///for `testing` purpose
+      //home: const SplashView(),
     );
   }
 }
 
 /// This [ResponsiveView] widget is for skipping the
-/// SplashView screen, hence it will reduce the development time.
+/// [SplashView] screen, hence it will reduce the overall
+/// development time.
 ///
 class ResponsiveView extends StatelessWidget {
   const ResponsiveView({Key? key}) : super(key: key);
