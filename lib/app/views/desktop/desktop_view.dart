@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 import '../../layout/responsive_layout.dart';
 import '../views.dart';
@@ -26,20 +27,45 @@ class DesktopView extends StatelessWidget {
             child: Text(
               'Explore your Photo Gallery.',
               style: TextStyle(
-                fontFamily: 'Quicksand',
                 fontSize: 60,
+                color: Colors.white,
+                fontFamily: 'Quicksand',
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          const Positioned(
-            top: 120,
+          Positioned(
+            top: 100,
             left: 20,
-            child: Text(
-              'Powered by unsplash API.',
-              style: TextStyle(
-                fontFamily: 'Quicksand',
-                fontSize: 35,
+            child: SizedBox(
+              height: 80,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Text(
+                    'Powered by',
+                    style: TextStyle(
+                      fontSize: 35,
+                      color: Colors.white,
+                      fontFamily: 'Quicksand',
+                    ),
+                  ),
+                  const SizedBox(width: 8.0),
+                  DefaultTextStyle(
+                    style: const TextStyle(
+                      fontSize: 35,
+                      color: Colors.white,
+                      fontFamily: 'Quicksand',
+                      fontWeight: FontWeight.bold,
+                    ),
+                    child: AnimatedTextKit(
+                      repeatForever: true,
+                      animatedTexts: [
+                        RotateAnimatedText('unsplash API'),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
