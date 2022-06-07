@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/app_bar.dart';
+
 class TabletInteractiveView extends StatefulWidget {
   final String imageUrl;
   const TabletInteractiveView({
@@ -55,36 +57,37 @@ class _TabletInteractiveViewState extends State<TabletInteractiveView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Tablet'),
-        actions: [
-          IconButton(
-            onPressed: _animateResetInitialize,
-            icon: const Icon(Icons.restart_alt),
-          ),
-        ],
-      ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10.0),
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              child: InteractiveViewer(
-                boundaryMargin: const EdgeInsets.all(double.infinity),
-                maxScale: 50,
-                transformationController: _transformationController,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(5.0),
-                  child: Image.network(
-                    widget.imageUrl,
-                    fit: BoxFit.contain,
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10.0),
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  child: InteractiveViewer(
+                    boundaryMargin: const EdgeInsets.all(double.infinity),
+                    maxScale: 50,
+                    transformationController: _transformationController,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(5.0),
+                      child: Image.network(
+                        widget.imageUrl,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
+            SizedBox(
+              height: 85,
+              width: double.infinity,
+              child: MyAppBar(height: 85, profileImage: widget.imageUrl),
+            ),
+          ],
         ),
       ),
     );
