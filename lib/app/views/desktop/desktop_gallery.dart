@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import '../../controllers/dummy_data.dart';
+import '../../controllers/dummy_controller.dart';
 import '../widgets/image_tile.dart';
 
 class DesktopGallery extends StatefulWidget {
@@ -16,9 +16,12 @@ class _DesktopGalleryState extends State<DesktopGallery> {
   static const pattern = [
     QuiltedGridTile(2, 2),
     QuiltedGridTile(1, 1),
-    QuiltedGridTile(2, 2),
     QuiltedGridTile(1, 1),
-    QuiltedGridTile(2, 2),
+    QuiltedGridTile(1, 2),
+    QuiltedGridTile(1, 2),
+    QuiltedGridTile(1, 1),
+    QuiltedGridTile(1, 2),
+    QuiltedGridTile(1, 1),
     QuiltedGridTile(1, 1),
     QuiltedGridTile(1, 1),
   ];
@@ -61,7 +64,7 @@ class StaggeredGridViewDesktop extends StatelessWidget {
         crossAxisCount: 8,
         mainAxisSpacing: 10,
         crossAxisSpacing: 10,
-        //repeatPattern: QuiltedGridRepeatPattern.inverted,
+        repeatPattern: QuiltedGridRepeatPattern.inverted,
         pattern: pattern,
       ),
       childrenDelegate: SliverChildBuilderDelegate(

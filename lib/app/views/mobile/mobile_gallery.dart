@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import '../../controllers/dummy_data.dart';
+import '../../controllers/dummy_controller.dart';
 import '../widgets/image_tile.dart';
 
 class MobileGallery extends StatefulWidget {
@@ -116,7 +116,7 @@ class StaggeredGridViewMobile extends StatelessWidget {
         crossAxisCount: 4,
         mainAxisSpacing: 6,
         crossAxisSpacing: 6,
-        //repeatPattern: QuiltedGridRepeatPattern.inverted,
+        repeatPattern: QuiltedGridRepeatPattern.inverted,
         pattern: pattern,
       ),
       childrenDelegate: SliverChildBuilderDelegate(

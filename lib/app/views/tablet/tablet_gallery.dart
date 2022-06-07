@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import '../../controllers/dummy_data.dart';
+import '../../controllers/dummy_controller.dart';
 import '../widgets/image_tile.dart';
 
 class TabletGallery extends StatefulWidget {
@@ -22,9 +22,10 @@ class _TabletGalleryState extends State<TabletGallery> {
     QuiltedGridTile(2, 2),
     QuiltedGridTile(1, 1),
     QuiltedGridTile(1, 1),
-    QuiltedGridTile(2, 2),
     QuiltedGridTile(1, 2),
-    //QuiltedGridTile(1, 1),
+    QuiltedGridTile(1, 2),
+    QuiltedGridTile(1, 1),
+    QuiltedGridTile(1, 1),
   ];
 
   Future<void> _checkInternetConnection() async {
@@ -117,7 +118,7 @@ class StaggeredGridViewTablet extends StatelessWidget {
         crossAxisCount: 6,
         mainAxisSpacing: 8,
         crossAxisSpacing: 8,
-        //repeatPattern: QuiltedGridRepeatPattern.inverted,
+        repeatPattern: QuiltedGridRepeatPattern.inverted,
         pattern: pattern,
       ),
       childrenDelegate: SliverChildBuilderDelegate(
