@@ -44,6 +44,8 @@ class _DesktopGalleryState extends State<DesktopGallery> {
   }
 }
 
+/// this [StaggeredGridViewDesktop] widget will always execute
+///
 class StaggeredGridViewDesktop extends StatelessWidget {
   const StaggeredGridViewDesktop({
     Key? key,

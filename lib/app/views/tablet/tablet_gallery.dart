@@ -63,41 +63,59 @@ class _TabletGalleryState extends State<TabletGallery> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Tablet')),
-      body: (!kIsWeb)
-          ? _isConnected
-              ? StaggeredGridViewTablet(
-                  scrollController: _scrollController,
-                  pattern: pattern,
-                )
-              : Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(
-                        Icons.wifi_off,
-                        size: 60,
-                        color: Colors.grey,
-                      ),
-                      SizedBox(height: 30),
-                      Text(
-                        'No Internet Connection..',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-          : StaggeredGridViewTablet(
-              scrollController: _scrollController,
-              pattern: pattern,
-            ),
+      body: SafeArea(
+        child: (!kIsWeb)
+            ? _isConnected
+                ? StaggeredGridViewTablet(
+                    scrollController: _scrollController,
+                    pattern: pattern,
+                  )
+                : const NoInternetConnectionTablet()
+            : StaggeredGridViewTablet(
+                scrollController: _scrollController,
+                pattern: pattern,
+              ),
+      ),
     );
   }
 }
 
+/// this [NoInternetConnectionTablet] widget will only execute
+/// when no internet `_isConnected` is false
+///
+class NoInternetConnectionTablet extends StatelessWidget {
+  const NoInternetConnectionTablet({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          Icon(
+            Icons.wifi_off,
+            size: 60,
+            color: Colors.grey,
+          ),
+          SizedBox(height: 30),
+          Text(
+            'No Internet Connection..',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.grey,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// this [StaggeredGridViewTablet] widget will execute
+/// the fancy grid view of the IU
+///
 class StaggeredGridViewTablet extends StatelessWidget {
   const StaggeredGridViewTablet({
     Key? key,
