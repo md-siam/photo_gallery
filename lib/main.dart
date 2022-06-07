@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         scaffoldBackgroundColor: const Color(0xFF0B0B0A),
       ),
-      //home: const ResponsiveView(), ///for `testing` purpose
-      home: const SplashView(),
+      home: const ResponsiveView(), ///for `testing` purpose
+      //home: const SplashView(),
     );
   }
 }

@@ -16,11 +16,14 @@ class ImageTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(
-      imageUrl,
-      width: width.toDouble(),
-      height: height.toDouble(),
-      fit: BoxFit.cover,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(5.0),
+      child: Image.network(
+        imageUrl,
+        width: width.toDouble(),
+        height: height.toDouble(),
+        fit: BoxFit.cover,
+      ),
     );
   }
 }

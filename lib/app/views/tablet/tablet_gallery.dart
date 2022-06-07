@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../controllers/dummy_data.dart';
-import '../widgets/image_time.dart';
+import '../widgets/image_tile.dart';
 
 class TabletGallery extends StatefulWidget {
   const TabletGallery({Key? key}) : super(key: key);
@@ -115,8 +115,8 @@ class StaggeredGridViewTablet extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       gridDelegate: SliverQuiltedGridDelegate(
         crossAxisCount: 6,
-        mainAxisSpacing: 4,
-        crossAxisSpacing: 4,
+        mainAxisSpacing: 8,
+        crossAxisSpacing: 8,
         //repeatPattern: QuiltedGridRepeatPattern.inverted,
         pattern: pattern,
       ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../controllers/dummy_data.dart';
-import '../widgets/image_time.dart';
+import '../widgets/image_tile.dart';
 
 class DesktopGallery extends StatefulWidget {
   const DesktopGallery({Key? key}) : super(key: key);
@@ -59,8 +59,8 @@ class StaggeredGridViewDesktop extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       gridDelegate: SliverQuiltedGridDelegate(
         crossAxisCount: 8,
-        mainAxisSpacing: 4,
-        crossAxisSpacing: 4,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
         //repeatPattern: QuiltedGridRepeatPattern.inverted,
         pattern: pattern,
       ),
