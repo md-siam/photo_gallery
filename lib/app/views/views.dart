@@ -9,3 +9,6 @@ export 'mobile/mobile_gallery.dart';
 export 'tablet/tablet_gallery.dart';
 
 /// Third level navigation from [DesktopGallery, MobileGallery, TabletGallery]
+export 'desktop/desktop_interactive_view.dart';
+export 'mobile/mobile_interactive_view.dart';
+export 'tablet/tablet_interactive_view.dart';
