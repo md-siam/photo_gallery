@@ -73,7 +73,85 @@ Packages from [pub.dev](https://pub.dev/):
   flutter_cache_manager: ^3.3.0
 ```
 
+## Features & Implementations
+<p align="center">
+  <table style="width:100%">
+    <tr>
+      <th align="center">Features</th>
+      <th align="center">Implementations</th>
+      <th align="center">Why?</th>
+    </tr>
+    <tr>
+      <td>Using Unsplash API for `Photos` list</td>
+      <td>✅ &nbsp;&nbsp; Done!</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Photo gallery UI</td>
+      <td>✅ &nbsp;&nbsp; Done!</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Full-screen photo view</td>
+      <td>✅ &nbsp;&nbsp; Done!</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Infinite scroll on the gallery screen</td>
+      <td>✅ &nbsp;&nbsp; Done!</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Optimized UI design</td>
+      <td>✅ &nbsp;&nbsp; Done!</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Cross-platform support<br>Support: iOS, Android & Web</td>
+      <td>✅ &nbsp;&nbsp; Done!</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Unit tests</td>
+      <td>❌ &nbsp;&nbsp; Not Done!</td>
+      <td>Not enough time.<br>Hence, left it for the SQA engineer.</td>
+    </tr>
+    <tr>
+      <td>Cache images</td>
+      <td>✅ &nbsp;&nbsp; Done!</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Cache API response</td>
+      <td>✅ &nbsp;&nbsp; Done!</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Allow saving photos in JPEG format</td>
+      <td>✅ &nbsp;&nbsp; Done!</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Allow sharing the photo</td>
+      <td>✅ &nbsp;&nbsp; Done!</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Proper git commit message</td>
+      <td>✅ &nbsp;&nbsp; Done!</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>Documentations in all the dart files</td>
+      <td>✅ &nbsp;&nbsp; Done!</td>
+      <td>-</td>
+    </tr>
+  </table>
+</p>
+
+
 ## App Demo
+
 
 ## File Pattern Inside The `lib` Folder
 
