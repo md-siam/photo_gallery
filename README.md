@@ -51,22 +51,22 @@ Quicksand: https://fonts.google.com/specimen/Quicksand
 Packages from [pub.dev](https://pub.dev/):
 
 ```
-  # For API calls & image downloading
-    dio: ^4.0.6
-  # For state management
-    provider: ^6.0.3
-  # For finding commonly used filesystem locations
-    path_provider: ^2.0.10
-  # For implementing the blurhash from the API
-    flutter_blurhash: ^0.7.0
-  # For animated text
-    animated_text_kit: ^4.2.2
-  # For various grid layouts
-    flutter_staggered_grid_view: ^0.6.1
-  # For saving images and videos in gallery
-    gallery_saver: ^2.3.2
-  # For sharing contents from Flutter app
-    share_plus: ^4.0.6
+# For API calls & image downloading
+  dio: ^4.0.6
+# For state management
+  provider: ^6.0.3
+# For finding commonly used filesystem locations
+  path_provider: ^2.0.10
+# For implementing the blurhash from the API
+  flutter_blurhash: ^0.7.0
+# For animated text
+  animated_text_kit: ^4.2.2
+# For various grid layouts
+  flutter_staggered_grid_view: ^0.6.1
+# For saving images and videos in gallery
+  gallery_saver: ^2.3.2
+# For sharing contents from Flutter app
+  share_plus: ^4.0.6
 ```
 
 ## App Demo
@@ -74,7 +74,7 @@ Packages from [pub.dev](https://pub.dev/):
 ## File Pattern Inside The `lib` Folder
 
 ```
-.
+lib
 ├── app
 │   ├── controllers
 │   │   └── dummy_controller.dart
