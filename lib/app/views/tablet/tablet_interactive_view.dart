@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/animated_floating_action_button.dart';
 import '../widgets/app_bar.dart';
 
 class TabletInteractiveView extends StatefulWidget {
@@ -85,7 +86,27 @@ class _TabletInteractiveViewState extends State<TabletInteractiveView>
             SizedBox(
               height: 85,
               width: double.infinity,
-              child: MyAppBar(height: 85, profileImage: widget.imageUrl),
+              child: MyAppBar(
+                height: 85,
+                profileImage: widget.imageUrl,
+              ),
+            ),
+            AnimatedFloatingActionButton(
+              icon1: Icons.email,
+              icon2: Icons.share_outlined,
+              icon3: Icons.download,
+              icon1Background: Colors.green,
+              icon2Background: Colors.orange,
+              icon3Background: Colors.purple,
+              onIcon1Tap: () {
+                debugPrint('First Button');
+              },
+              onIcon2Tap: () {
+                debugPrint('Second Button');
+              },
+              onIcon3Tap: () {
+                debugPrint('Third Button');
+              },
             ),
           ],
         ),
