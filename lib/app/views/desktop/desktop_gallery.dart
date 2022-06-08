@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../controllers/dummy_controller.dart';
-import '../widgets/image_tile.dart';
+import '../widgets/widgets.dart';
 
 class DesktopGallery extends StatefulWidget {
   const DesktopGallery({Key? key}) : super(key: key);

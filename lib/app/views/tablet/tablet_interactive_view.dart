@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icofont_flutter/icofont_flutter.dart';
 
-import '../widgets/animated_floating_action_button.dart';
-import '../widgets/app_bar.dart';
+import '../widgets/widgets.dart';
 
 class TabletInteractiveView extends StatefulWidget {
   final String imageUrl;
