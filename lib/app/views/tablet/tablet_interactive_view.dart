@@ -100,7 +100,7 @@ class _TabletInteractiveViewState extends State<TabletInteractiveView>
               icon2Background: Colors.orange,
               icon3Background: Colors.purple,
               onIcon1Tap: () {
-                debugPrint('First Button');
+                _animateResetInitialize();
               },
               onIcon2Tap: () {
                 debugPrint('Second Button');

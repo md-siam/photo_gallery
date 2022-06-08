@@ -97,9 +97,9 @@ class _AnimatedFloatingActionButtonState
   }
 
   // method for displaying snackBar
-  snackBar(String serial) {
+  snackBar(String message) {
     return SnackBar(
-      content: Text('$serial button pressed'),
+      content: Text(message),
       action: SnackBarAction(
         label: 'Undo',
         onPressed: () {
@@ -146,7 +146,7 @@ class _AnimatedFloatingActionButtonState
                       onClick: () {
                         widget.onIcon1Tap();
                         ScaffoldMessenger.of(context)
-                            .showSnackBar(snackBar('First'));
+                            .showSnackBar(snackBar('Zoom Reset'));
                       },
                     ),
                   ),
