@@ -9,11 +9,15 @@ import 'components/glass_box.dart';
 ///
 class MyAppBar extends StatelessWidget {
   final double height;
-  final String profileImage;
+  final String username;
+  final String location;
+  final String userImageUrl;
   const MyAppBar({
     Key? key,
     required this.height,
-    required this.profileImage,
+    required this.username,
+    required this.location,
+    required this.userImageUrl,
   }) : super(key: key);
 
   @override
@@ -48,7 +52,7 @@ class MyAppBar extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            'Full Name: ',
+                            '$username: ',
                             style: textStyle,
                           ),
                           const Icon(IcoFontIcons.infoCircle)
@@ -58,7 +62,7 @@ class MyAppBar extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            'Location: ',
+                            '$location: ',
                             style: textStyle.copyWith(
                               color: Colors.grey,
                             ),
@@ -92,7 +96,7 @@ class MyAppBar extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10.0),
                       child: Image.network(
-                        profileImage,
+                        userImageUrl,
                         fit: BoxFit.cover,
                       ),
                     ),

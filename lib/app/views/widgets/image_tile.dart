@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
 
 import '../../layout/responsive_layout.dart';
 import '../views.dart';
@@ -17,14 +17,22 @@ class ImageTile extends StatelessWidget {
   final int index;
   final int width;
   final int height;
-  final String imageUrl;
+  final String username;
+  final String location;
+  final String userImageUrl;
+  final String thumbnailUrl;
+  final String fullResolutionImageUrl;
 
   const ImageTile({
     Key? key,
     required this.index,
     required this.width,
     required this.height,
-    required this.imageUrl,
+    required this.username,
+    required this.location,
+    required this.userImageUrl,
+    required this.thumbnailUrl,
+    required this.fullResolutionImageUrl,
   }) : super(key: key);
 
   @override
@@ -35,9 +43,24 @@ class ImageTile extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (BuildContext context) => ResponsiveLayout(
-              mobileBody: MobileInteractiveView(imageUrl: imageUrl),
-              tabletBody: TabletInteractiveView(imageUrl: imageUrl),
-              desktopBody: DesktopInteractiveView(imageUrl: imageUrl),
+              mobileBody: MobileInteractiveView(
+                username: username,
+                location: location,
+                userImageUrl: userImageUrl,
+                regularImageUrl: fullResolutionImageUrl,
+              ),
+              tabletBody: TabletInteractiveView(
+                username: username,
+                location: location,
+                userImageUrl: userImageUrl,
+                regularImageUrl: fullResolutionImageUrl,
+              ),
+              desktopBody: DesktopInteractiveView(
+                username: username,
+                location: location,
+                userImageUrl: userImageUrl,
+                regularImageUrl: fullResolutionImageUrl,
+              ),
             ),
           ),
         );
@@ -54,7 +77,7 @@ class ImageTile extends StatelessWidget {
   Widget buildImage() {
     return CachedNetworkImage(
       key: UniqueKey(),
-      imageUrl: imageUrl,
+      imageUrl: thumbnailUrl,
       width: width.toDouble(),
       height: height.toDouble(),
       fit: BoxFit.cover,

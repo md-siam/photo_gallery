@@ -7,10 +7,16 @@ import '../widgets/widgets.dart';
 /// `zoom`, `share` & `download` functionality.
 ///
 class MobileInteractiveView extends StatefulWidget {
-  final String imageUrl;
+  final String username;
+  final String location;
+  final String userImageUrl;
+  final String regularImageUrl;
   const MobileInteractiveView({
     Key? key,
-    required this.imageUrl,
+    required this.username,
+    required this.location,
+    required this.userImageUrl,
+    required this.regularImageUrl,
   }) : super(key: key);
 
   @override
@@ -61,15 +67,6 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Mobile'),
-      //   actions: [
-      //     IconButton(
-      //       onPressed: _animateResetInitialize,
-      //       icon: const Icon(Icons.restart_alt),
-      //     ),
-      //   ],
-      // ),
       body: SafeArea(
         child: Stack(
           children: [
@@ -87,7 +84,7 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(5.0),
                       child: Image.network(
-                        widget.imageUrl,
+                        widget.regularImageUrl,
                         fit: BoxFit.contain,
                       ),
                     ),
@@ -100,7 +97,9 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
               width: double.infinity,
               child: MyAppBar(
                 height: 85,
-                profileImage: widget.imageUrl,
+                username: widget.username,
+                location: widget.location,
+                userImageUrl: widget.userImageUrl,
               ),
             ),
             AnimatedFloatingActionButton(
@@ -123,7 +122,7 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
               onIcon3Tap: () {
                 // TODO: Image download functionality
                 debugPrint('Third Button');
-              }, 
+              },
             ),
           ],
         ),

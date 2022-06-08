@@ -3,8 +3,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:icofont_flutter/icofont_flutter.dart';
+import 'package:provider/provider.dart';
 
-import '../../controllers/dummy_controller.dart';
+import '../../providers/photo_provider.dart';
 import '../widgets/widgets.dart';
 
 /// This [DesktopGallery] class will display a staggered grid view of all
@@ -36,6 +37,9 @@ class _DesktopGalleryState extends State<DesktopGallery> {
   @override
   void initState() {
     super.initState();
+    final photoModel = Provider.of<MultiPhotoProvider>(context, listen: false);
+    photoModel.getPhotoData();
+
     _scrollController = ScrollController();
     _scrollController.addListener(() {
       setState(() {
@@ -55,10 +59,15 @@ class _DesktopGalleryState extends State<DesktopGallery> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Desktop')),
-      body: StaggeredGridViewDesktop(
-        scrollController: _scrollController,
-        pattern: pattern,
-      ),
+      body: Consumer<MultiPhotoProvider>(builder: (context, photoModel, child) {
+        return photoModel.isLoading
+            ? const Center(child: CircularProgressIndicator())
+            : StaggeredGridViewDesktop(
+                scrollController: _scrollController,
+                pattern: pattern,
+                photoModel: photoModel,
+              );
+      }),
       floatingActionButton: NormalFloatingActionButton(
         leftIcon: IcoFontIcons.uiDelete,
         rightIcon: IcoFontIcons.arrowUp,
@@ -91,11 +100,13 @@ class _DesktopGalleryState extends State<DesktopGallery> {
 class StaggeredGridViewDesktop extends StatelessWidget {
   final ScrollController _scrollController;
   final List<QuiltedGridTile> pattern;
+  final MultiPhotoProvider photoModel;
 
   const StaggeredGridViewDesktop({
     Key? key,
     required ScrollController scrollController,
     required this.pattern,
+    required this.photoModel,
   })  : _scrollController = scrollController,
         super(key: key);
 
@@ -116,9 +127,17 @@ class StaggeredGridViewDesktop extends StatelessWidget {
           index: index,
           width: pattern[index % pattern.length].crossAxisCount * 100,
           height: pattern[index % pattern.length].mainAxisCount * 100,
-          imageUrl: breakingBadData[index].pictureUrl,
+          username:
+              '${photoModel.photoList?[index].user?.firstName ?? ''} ${photoModel.photoList?[index].user?.lastName ?? ''}',
+          location:
+              // ignore: unnecessary_string_interpolations
+              '${photoModel.photoList?[index].user?.location ?? 'Unknown'}',
+          userImageUrl:
+              '${photoModel.photoList?[index].user?.profileImage?.large}',
+          thumbnailUrl: '${photoModel.photoList?[index].urls?.thumb}',
+          fullResolutionImageUrl: '${photoModel.photoList?[index].urls?.full}',
         ),
-        childCount: breakingBadData.length,
+        childCount: photoModel.photoList!.length,
       ),
     );
   }

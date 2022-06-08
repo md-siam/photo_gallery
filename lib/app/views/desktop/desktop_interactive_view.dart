@@ -7,10 +7,16 @@ import '../widgets/widgets.dart';
 /// `zoom`, `share` & `download` functionality.
 ///
 class DesktopInteractiveView extends StatefulWidget {
-  final String imageUrl;
+  final String username;
+  final String location;
+  final String userImageUrl;
+  final String regularImageUrl;
   const DesktopInteractiveView({
     Key? key,
-    required this.imageUrl,
+    required this.username,
+    required this.location,
+    required this.userImageUrl,
+    required this.regularImageUrl,
   }) : super(key: key);
 
   @override
@@ -78,7 +84,7 @@ class _DesktopInteractiveViewState extends State<DesktopInteractiveView>
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(5.0),
                       child: Image.network(
-                        widget.imageUrl,
+                        widget.regularImageUrl,
                         fit: BoxFit.contain,
                       ),
                     ),
@@ -91,7 +97,9 @@ class _DesktopInteractiveViewState extends State<DesktopInteractiveView>
               width: double.infinity,
               child: MyAppBar(
                 height: 85,
-                profileImage: widget.imageUrl,
+                username: widget.username,
+                location: widget.location,
+                userImageUrl: widget.userImageUrl,
               ),
             ),
             AnimatedFloatingActionButton(

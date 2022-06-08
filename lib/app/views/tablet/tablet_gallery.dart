@@ -7,8 +7,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:icofont_flutter/icofont_flutter.dart';
+import 'package:provider/provider.dart';
 
-import '../../controllers/dummy_controller.dart';
+import '../../providers/photo_provider.dart';
 import '../widgets/widgets.dart';
 
 /// This [TabletGallery] class will display a staggered grid view of all
@@ -56,6 +57,9 @@ class _TabletGalleryState extends State<TabletGallery> {
   @override
   void initState() {
     super.initState();
+    final photoModel = Provider.of<MultiPhotoProvider>(context, listen: false);
+    photoModel.getPhotoData();
+    
     if (!kIsWeb) {
       _checkInternetConnection();
     }
@@ -80,18 +84,30 @@ class _TabletGalleryState extends State<TabletGallery> {
       body: SafeArea(
         child: (!kIsWeb)
             ? _isConnected
-                ? StaggeredGridViewTablet(
-                    scrollController: _scrollController,
-                    pattern: pattern,
-                  )
+                ? Consumer<MultiPhotoProvider>(
+                    builder: (context, photoModel, child) {
+                    return photoModel.isLoading
+                        ? const Center(child: CircularProgressIndicator())
+                        : StaggeredGridViewTablet(
+                            scrollController: _scrollController,
+                            pattern: pattern,
+                            photoModel: photoModel,
+                          );
+                  })
                 : const NoInternetConnection(
                     iconSize: 60,
                     textSize: 30,
                   )
-            : StaggeredGridViewTablet(
-                scrollController: _scrollController,
-                pattern: pattern,
-              ),
+            : Consumer<MultiPhotoProvider>(
+                builder: (context, photoModel, child) {
+                return photoModel.isLoading
+                    ? const Center(child: CircularProgressIndicator())
+                    : StaggeredGridViewTablet(
+                        scrollController: _scrollController,
+                        pattern: pattern,
+                        photoModel: photoModel,
+                      );
+              }),
       ),
       floatingActionButton: NormalFloatingActionButton(
         leftIcon: IcoFontIcons.uiDelete,
@@ -99,7 +115,7 @@ class _TabletGalleryState extends State<TabletGallery> {
         fabIsVisible: _fabIsVisible,
         scrollController: _scrollController,
         onLeftIconTap: () {
-          cleanCacheMobile() ;
+          cleanCacheMobile();
         },
         onRightIconTap: () {
           _scrollController.animateTo(0,
@@ -109,6 +125,7 @@ class _TabletGalleryState extends State<TabletGallery> {
       ),
     );
   }
+
   /// methods for cleaning `Image Cache files`
   ///
   void cleanCacheMobile() {
@@ -117,7 +134,6 @@ class _TabletGalleryState extends State<TabletGallery> {
     imageCache.clearLiveImages();
     setState(() {});
   }
-
 }
 
 /// this [StaggeredGridViewTablet] widget will execute
@@ -126,11 +142,13 @@ class _TabletGalleryState extends State<TabletGallery> {
 class StaggeredGridViewTablet extends StatelessWidget {
   final ScrollController _scrollController;
   final List<QuiltedGridTile> pattern;
+  final MultiPhotoProvider photoModel;
 
   const StaggeredGridViewTablet({
     Key? key,
     required ScrollController scrollController,
     required this.pattern,
+    required this.photoModel,
   })  : _scrollController = scrollController,
         super(key: key);
 
@@ -151,9 +169,17 @@ class StaggeredGridViewTablet extends StatelessWidget {
           index: index,
           width: pattern[index % pattern.length].crossAxisCount * 100,
           height: pattern[index % pattern.length].mainAxisCount * 100,
-          imageUrl: breakingBadData[index].pictureUrl,
+          username:
+              '${photoModel.photoList?[index].user?.firstName ?? ''} ${photoModel.photoList?[index].user?.lastName ?? ''}',
+          location:
+              // ignore: unnecessary_string_interpolations
+              '${photoModel.photoList?[index].user?.location ?? 'Unknown'}',
+          userImageUrl:
+              '${photoModel.photoList?[index].user?.profileImage?.large}',
+          thumbnailUrl: '${photoModel.photoList?[index].urls?.thumb}',
+          fullResolutionImageUrl: '${photoModel.photoList?[index].urls?.full}',
         ),
-        childCount: breakingBadData.length,
+        childCount: photoModel.photoList!.length,
       ),
     );
   }
