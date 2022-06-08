@@ -7,6 +7,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../controllers/dummy_controller.dart';
 import '../widgets/image_tile.dart';
+import '../widgets/no_internet_connection.dart';
 
 class TabletGallery extends StatefulWidget {
   const TabletGallery({Key? key}) : super(key: key);
@@ -70,44 +71,14 @@ class _TabletGalleryState extends State<TabletGallery> {
                     scrollController: _scrollController,
                     pattern: pattern,
                   )
-                : const NoInternetConnectionTablet()
+                : const NoInternetConnection(
+                    iconSize: 60,
+                    textSize: 30,
+                  )
             : StaggeredGridViewTablet(
                 scrollController: _scrollController,
                 pattern: pattern,
               ),
-      ),
-    );
-  }
-}
-
-/// this [NoInternetConnectionTablet] widget will only execute
-/// when no internet `_isConnected` is false
-///
-class NoInternetConnectionTablet extends StatelessWidget {
-  const NoInternetConnectionTablet({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Icon(
-            Icons.wifi_off,
-            size: 60,
-            color: Colors.grey,
-          ),
-          SizedBox(height: 30),
-          Text(
-            'No Internet Connection..',
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.grey,
-            ),
-          ),
-        ],
       ),
     );
   }

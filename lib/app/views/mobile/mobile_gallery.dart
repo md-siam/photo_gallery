@@ -7,6 +7,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../controllers/dummy_controller.dart';
 import '../widgets/image_tile.dart';
+import '../widgets/no_internet_connection.dart';
 
 class MobileGallery extends StatefulWidget {
   const MobileGallery({Key? key}) : super(key: key);
@@ -68,44 +69,14 @@ class _MobileGalleryState extends State<MobileGallery> {
                     scrollController: _scrollController,
                     pattern: pattern,
                   )
-                : const NoInternetConnectionMobile()
+                : const NoInternetConnection(
+                    iconSize: 60,
+                    textSize: 20,
+                  )
             : StaggeredGridViewMobile(
                 scrollController: _scrollController,
                 pattern: pattern,
               ),
-      ),
-    );
-  }
-}
-
-/// this [NoInternetConnectionMobile] widget will only execute
-/// when no internet `_isConnected` is false
-///
-class NoInternetConnectionMobile extends StatelessWidget {
-  const NoInternetConnectionMobile({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Icon(
-            Icons.wifi_off,
-            size: 60,
-            color: Colors.grey,
-          ),
-          SizedBox(height: 30),
-          Text(
-            'No Internet Connection..',
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.grey,
-            ),
-          ),
-        ],
       ),
     );
   }
