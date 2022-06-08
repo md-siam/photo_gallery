@@ -8,6 +8,9 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../controllers/dummy_controller.dart';
 import '../widgets/widgets.dart';
 
+/// This [TabletGallery] class will display a staggered grid view of all
+/// the images from `https://unsplash.com/` API calls.
+///
 class TabletGallery extends StatefulWidget {
   const TabletGallery({Key? key}) : super(key: key);
 
@@ -87,15 +90,15 @@ class _TabletGalleryState extends State<TabletGallery> {
 /// the fancy grid view of the IU
 ///
 class StaggeredGridViewTablet extends StatelessWidget {
+  final ScrollController _scrollController;
+  final List<QuiltedGridTile> pattern;
+
   const StaggeredGridViewTablet({
     Key? key,
     required ScrollController scrollController,
     required this.pattern,
   })  : _scrollController = scrollController,
         super(key: key);
-
-  final ScrollController _scrollController;
-  final List<QuiltedGridTile> pattern;
 
   @override
   Widget build(BuildContext context) {

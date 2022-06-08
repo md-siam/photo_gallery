@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// this [NoInternetConnectionMobile] widget will only execute
 /// when no internet `_isConnected` is false in
-/// [MobileGallery}] & in [TabletGallery]
+/// classes: [MobileGallery] & in [TabletGallery].
 ///
 class NoInternetConnection extends StatelessWidget {
   final double iconSize;

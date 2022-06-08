@@ -1,5 +1,8 @@
-/// This is a dummy controller for reducing production time
-/// main API url: [https://www.breakingbadapi.com/api/characters?limit=30]
+/// Since the API from [https://unsplash.com/] only allows `50` requests
+/// in an hour, therefore this controller is for providing dummy data and hence reducing the overall production time.
+///
+/// Main API for this dummy controller is available here:
+/// [https://www.breakingbadapi.com/api/characters?limit=30]
 
 class CharacterModel {
   final int id;

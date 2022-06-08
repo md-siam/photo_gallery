@@ -3,6 +3,9 @@ import 'package:icofont_flutter/icofont_flutter.dart';
 
 import '../widgets/widgets.dart';
 
+/// This [TabletInteractiveView] class will display one image with
+/// `zoom`, `share` & `download` functionality.
+///
 class TabletInteractiveView extends StatefulWidget {
   final String imageUrl;
   const TabletInteractiveView({

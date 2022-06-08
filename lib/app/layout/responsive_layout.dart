@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'breakpoints.dart';
 
+/// This [ResponsiveLayout] is for maintaining the responsive
+/// behavior of the overall application. It will do this by using
+/// three Widget properties: `mobileBody`, `tabletBody`, & `desktopBody`
+///
 class ResponsiveLayout extends StatelessWidget {
   final Widget mobileBody;
   final Widget tabletBody;

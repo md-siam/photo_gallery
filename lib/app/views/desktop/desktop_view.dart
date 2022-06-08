@@ -4,6 +4,9 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../layout/responsive_layout.dart';
 import '../views.dart';
 
+/// This [DesktopView] class will display the intro screen for the
+/// desktop layout
+///
 class DesktopView extends StatelessWidget {
   const DesktopView({Key? key}) : super(key: key);
 

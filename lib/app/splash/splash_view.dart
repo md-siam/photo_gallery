@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import '../layout/responsive_layout.dart';
 import '../views/views.dart';
 
+/// This [SplashView] class will provide the splash behavior for 
+/// all respected layouts.
+///
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
 

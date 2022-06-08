@@ -3,6 +3,10 @@ import 'package:icofont_flutter/icofont_flutter.dart';
 
 import 'components/glass_box.dart';
 
+/// This [MyAppBar] class is return a custom frosted glass app bar
+/// for the interactive view classes, which are:
+/// [DesktopInteractiveView, MobileInteractiveView, TabletInteractiveView]
+///
 class MyAppBar extends StatelessWidget {
   final double height;
   final String profileImage;

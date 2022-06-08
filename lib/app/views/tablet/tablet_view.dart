@@ -4,6 +4,9 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../layout/responsive_layout.dart';
 import '../views.dart';
 
+/// This [TabletView] class will display the intro screen for the
+/// tablet layout
+///
 class TabletView extends StatelessWidget {
   const TabletView({Key? key}) : super(key: key);
 

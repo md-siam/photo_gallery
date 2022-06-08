@@ -4,6 +4,9 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../layout/responsive_layout.dart';
 import '../views.dart';
 
+/// This [MobileView] class will display the intro screen for the
+/// mobile layout
+///
 class MobileView extends StatelessWidget {
   const MobileView({Key? key}) : super(key: key);
 

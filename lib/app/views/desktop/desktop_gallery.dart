@@ -4,6 +4,9 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../controllers/dummy_controller.dart';
 import '../widgets/widgets.dart';
 
+/// This [DesktopGallery] class will display a staggered grid view of all
+/// the images from `https://unsplash.com/` API calls.
+///
 class DesktopGallery extends StatefulWidget {
   const DesktopGallery({Key? key}) : super(key: key);
 
@@ -47,15 +50,15 @@ class _DesktopGalleryState extends State<DesktopGallery> {
 /// this [StaggeredGridViewDesktop] widget will always execute
 ///
 class StaggeredGridViewDesktop extends StatelessWidget {
+  final ScrollController _scrollController;
+  final List<QuiltedGridTile> pattern;
+  
   const StaggeredGridViewDesktop({
     Key? key,
     required ScrollController scrollController,
     required this.pattern,
   })  : _scrollController = scrollController,
         super(key: key);
-
-  final ScrollController _scrollController;
-  final List<QuiltedGridTile> pattern;
 
   @override
   Widget build(BuildContext context) {
