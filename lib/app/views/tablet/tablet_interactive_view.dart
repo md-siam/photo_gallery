@@ -99,6 +99,9 @@ class _TabletInteractiveViewState extends State<TabletInteractiveView>
               icon1Background: Colors.green,
               icon2Background: Colors.orange,
               icon3Background: Colors.purple,
+              icon1SnackBarMessage: 'Zoom Reset',
+              icon2SnackBarMessage: 'Share Complete',
+              icon3SnackBarMessage: 'Download Complete',
               onIcon1Tap: () {
                 _animateResetInitialize();
               },
@@ -107,7 +110,7 @@ class _TabletInteractiveViewState extends State<TabletInteractiveView>
               },
               onIcon3Tap: () {
                 debugPrint('Third Button');
-              },
+              }, 
             ),
           ],
         ),

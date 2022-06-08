@@ -99,6 +99,9 @@ class _DesktopInteractiveViewState extends State<DesktopInteractiveView>
               icon1Background: Colors.green,
               icon2Background: Colors.orange,
               icon3Background: Colors.purple,
+              icon1SnackBarMessage: 'Zoom Reset!',
+              icon2SnackBarMessage: 'Share Completed!',
+              icon3SnackBarMessage: 'Download Completed!',
               onIcon1Tap: () {
                 _animateResetInitialize();
               },

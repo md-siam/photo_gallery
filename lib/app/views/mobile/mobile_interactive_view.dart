@@ -108,6 +108,9 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
               icon1Background: Colors.green,
               icon2Background: Colors.orange,
               icon3Background: Colors.purple,
+              icon1SnackBarMessage: 'Zoom Reset',
+              icon2SnackBarMessage: 'Share Complete',
+              icon3SnackBarMessage: 'Download Complete',
               onIcon1Tap: () {
                 _animateResetInitialize();
               },

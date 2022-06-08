@@ -12,6 +12,9 @@ class AnimatedFloatingActionButton extends StatefulWidget {
   final GestureTapCallback onIcon1Tap;
   final GestureTapCallback onIcon2Tap;
   final GestureTapCallback onIcon3Tap;
+  final String icon1SnackBarMessage;
+  final String icon2SnackBarMessage;
+  final String icon3SnackBarMessage;
 
   const AnimatedFloatingActionButton({
     Key? key,
@@ -24,6 +27,9 @@ class AnimatedFloatingActionButton extends StatefulWidget {
     required this.onIcon1Tap,
     required this.onIcon2Tap,
     required this.onIcon3Tap,
+    required this.icon1SnackBarMessage,
+    required this.icon2SnackBarMessage,
+    required this.icon3SnackBarMessage,
   }) : super(key: key);
 
   @override
@@ -99,9 +105,14 @@ class _AnimatedFloatingActionButtonState
   // method for displaying snackBar
   snackBar(String message) {
     return SnackBar(
-      content: Text(message),
+      backgroundColor: Colors.white.withOpacity(0.4),
+      content: Text(
+        message,
+        style: const TextStyle(color: Colors.white),
+      ),
       action: SnackBarAction(
-        label: 'Undo',
+        label: 'Close',
+        textColor: Colors.orange,
         onPressed: () {
           ScaffoldMessenger.of(context).hideCurrentSnackBar();
         },
@@ -145,8 +156,9 @@ class _AnimatedFloatingActionButtonState
                       icon: Icon(widget.icon1, color: Colors.white),
                       onClick: () {
                         widget.onIcon1Tap();
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(snackBar('Zoom Reset'));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          snackBar(widget.icon1SnackBarMessage),
+                        );
                       },
                     ),
                   ),
@@ -166,8 +178,9 @@ class _AnimatedFloatingActionButtonState
                       icon: Icon(widget.icon2, color: Colors.white),
                       onClick: () {
                         widget.onIcon2Tap();
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(snackBar('Second'));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          snackBar(widget.icon2SnackBarMessage),
+                        );
                       },
                     ),
                   ),
@@ -187,8 +200,9 @@ class _AnimatedFloatingActionButtonState
                       icon: Icon(widget.icon3, color: Colors.white),
                       onClick: () {
                         widget.onIcon3Tap();
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(snackBar('Third'));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          snackBar(widget.icon3SnackBarMessage),
+                        );
                       },
                     ),
                   ),
@@ -229,6 +243,7 @@ class _AnimatedFloatingActionButtonState
                             child: AnimatedIcon(
                               color: Colors.white,
                               icon: AnimatedIcons.menu_close,
+                              size: 30,
                               progress: animationController,
                             ),
                           ),
