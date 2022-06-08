@@ -1,5 +1,11 @@
+import 'dart:developer';
+
+import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:icofont_flutter/icofont_flutter.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../widgets/widgets.dart';
 
@@ -47,6 +53,24 @@ class _DesktopInteractiveViewState extends State<DesktopInteractiveView>
     ).animate(_controllerReset);
     _animationReset!.addListener(_onAnimateReset);
     _controllerReset.forward();
+  }
+
+  void _shareAPhoto() async {
+    String url = widget.regularImageUrl;
+
+    try {
+      final tempDir = await getTemporaryDirectory();
+      final path = '${tempDir.path}/image.jpg';
+      // Dio() will download the image in tempDir
+      await Dio().download(url, path);
+
+      Share.shareFiles(
+        [path],
+        text: 'Username: ${widget.username}, Location: ${widget.location}',
+      );
+    } catch (e) {
+      log(e.toString());
+    }
   }
 
   @override
@@ -110,19 +134,18 @@ class _DesktopInteractiveViewState extends State<DesktopInteractiveView>
               icon2Background: Colors.orange,
               icon3Background: Colors.purple,
               icon1SnackBarMessage: 'Zoom Reset!',
-              icon2SnackBarMessage: 'Share Completed!',
+              icon2SnackBarMessage: 'Waiting..',
               icon3SnackBarMessage: 'Download Completed!',
               onIcon1Tap: () {
                 _animateResetInitialize();
               },
               onIcon2Tap: () {
-                // TODO: Image share functionality
-                debugPrint('Second Button');
+                (!kIsWeb) ? _shareAPhoto() : log('Share does not work in web');
               },
               onIcon3Tap: () {
                 // TODO: Image download functionality
                 debugPrint('Third Button');
-              }, 
+              },
             ),
           ],
         ),
