@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:icofont_flutter/icofont_flutter.dart';
 
 import '../../controllers/dummy_controller.dart';
 import '../widgets/widgets.dart';
@@ -58,8 +59,19 @@ class _DesktopGalleryState extends State<DesktopGallery> {
         pattern: pattern,
       ),
       floatingActionButton: NormalFloatingActionButton(
+        leftIcon: IcoFontIcons.uiDelete,
+        rightIcon: IcoFontIcons.arrowUp,
         fabIsVisible: _fabIsVisible,
         scrollController: _scrollController,
+        onLeftIconTap: () {
+          //TODO: Delete cache files
+          print('Cache clean');
+        },
+        onRightIconTap: () {
+          _scrollController.animateTo(0,
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeIn);
+        },
       ),
     );
   }
