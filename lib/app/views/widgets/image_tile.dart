@@ -10,6 +10,9 @@ import '../views.dart';
 /// If tapped on the image it will re-direct the user to their respected class(depends on ``ResponsiveLayout`` class):
 /// [DesktopInteractiveView, MobileInteractiveView, & TabletInteractiveView]
 ///
+/// In addition to that it is using `cached_network_image` package for
+/// network image caching.
+///
 class ImageTile extends StatelessWidget {
   final int index;
   final int width;
@@ -57,10 +60,33 @@ class ImageTile extends StatelessWidget {
       fit: BoxFit.cover,
       placeholder: (context, url) => Center(
         child: Image.asset(
-          'assets/images/placeholder/image_coming_soon_transparent.png',
+          'assets/images/placeholder/image_coming_soon.png',
           width: width.toDouble(),
           height: height.toDouble(),
           fit: BoxFit.cover,
+        ),
+      ),
+      errorWidget: (context, url, error) => Container(
+        alignment: Alignment.center,
+        color: Colors.black12,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.error,
+              size: 25,
+              color: Colors.red[400],
+            ),
+            const SizedBox(height: 5.0),
+            const Text(
+              'Error occurred while\nloading..',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.grey,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );

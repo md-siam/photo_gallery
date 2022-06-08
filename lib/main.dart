@@ -5,8 +5,10 @@
 // license that can be found in the LICENSE file or at
 // https://choosealicense.com/licenses/mit/
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'app/layout/responsive_layout.dart';
+import 'app/providers/photo_provider.dart';
 import 'app/splash/splash_view.dart';
 import 'app/views/views.dart';
 
@@ -20,16 +22,24 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Photo Gallery',
-      debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.dark,
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color(0xFF0B0B0A),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => MultiPhotoProvider()),
+      ],
+      child: MaterialApp(
+        title: 'Photo Gallery',
+        debugShowCheckedModeBanner: false,
+        themeMode: ThemeMode.dark,
+        darkTheme: ThemeData(
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: const Color(0xFF0B0B0A),
+        ),
+        home: const SplashView(),
+
+        /// this is for `testing` purpose
+        //home: const ResponsiveView(),
+        
       ),
-      home: const ResponsiveView(),  /// this is for `testing` purpose
-      //home: const SplashView(),
     );
   }
 }
