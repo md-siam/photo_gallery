@@ -59,7 +59,7 @@ class _TabletGalleryState extends State<TabletGallery> {
     super.initState();
     final photoModel = Provider.of<MultiPhotoProvider>(context, listen: false);
     photoModel.getPhotoData();
-    
+
     if (!kIsWeb) {
       _checkInternetConnection();
     }
@@ -176,7 +176,7 @@ class StaggeredGridViewTablet extends StatelessWidget {
               '${photoModel.photoList?[index].user?.location ?? 'Unknown'}',
           userImageUrl:
               '${photoModel.photoList?[index].user?.profileImage?.large}',
-          thumbnailUrl: '${photoModel.photoList?[index].urls?.thumb}',
+          thumbnailUrl: '${photoModel.photoList?[index].urls?.regular}',
           fullResolutionImageUrl: '${photoModel.photoList?[index].urls?.full}',
         ),
         childCount: photoModel.photoList!.length,

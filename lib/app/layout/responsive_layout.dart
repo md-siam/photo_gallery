@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'breakpoints.dart';
+import '../static/static_values.dart';
 
 /// This [ResponsiveLayout] is for maintaining the responsive
 /// behavior of the overall application. It will do this by using
@@ -22,9 +22,9 @@ class ResponsiveLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        if (constraints.maxWidth <= mobileWidth) {
+        if (constraints.maxWidth <= StaticValues.mobileBreakPointWidth) {
           return mobileBody;
-        } else if (constraints.maxWidth <= tabletWidth) {
+        } else if (constraints.maxWidth <= StaticValues.tabletBreakPointWidth) {
           return tabletBody;
         } else {
           return desktopBody;

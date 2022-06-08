@@ -10,7 +10,7 @@ class MultiPhotoProvider extends ChangeNotifier {
   getPhotoData() async {
     isLoading = true;
     photoList = await getMultiplePhotoData();
-    print('Provider: ${photoList?.length}');
+    print('Provider: ${photoList?.length} photos');
     isLoading = false;
 
     notifyListeners();

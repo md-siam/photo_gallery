@@ -2,13 +2,13 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 
-import '../static/static_values.dart';
 import '../models/photo_model.dart';
+import '../static/static_values.dart';
 
 Future<List<PhotoModel>> getMultiplePhotoData() async {
   List<PhotoModel> resultList = [];
   try {
-    Response response = await Dio().get(StaticValues.listOfPhotosUrl);
+    Response response = await Dio().get(StaticValues.listOfRandomCountPhoto);
 
     //print('Response: ${response.data}');
     //print(response.statusCode);
