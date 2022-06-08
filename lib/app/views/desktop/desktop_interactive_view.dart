@@ -108,11 +108,13 @@ class _DesktopInteractiveViewState extends State<DesktopInteractiveView>
                 _animateResetInitialize();
               },
               onIcon2Tap: () {
+                // TODO: Image share functionality
                 debugPrint('Second Button');
               },
               onIcon3Tap: () {
+                // TODO: Image download functionality
                 debugPrint('Third Button');
-              },
+              }, 
             ),
           ],
         ),
