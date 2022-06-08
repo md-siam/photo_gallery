@@ -45,8 +45,6 @@ dependencies:
   provider: ^6.0.3
   # For finding commonly used filesystem locations
   path_provider: ^2.0.10
-  # For implementing the blurhash from the API
-  flutter_blurhash: ^0.7.0
   # For animated text
   animated_text_kit: ^4.2.2
   # For various grid layouts
@@ -57,6 +55,10 @@ dependencies:
   gallery_saver: ^2.3.2
   # For sharing contents from Flutter app
   share_plus: ^4.0.6
+  # For image caching & keeping them in cache directory
+  cached_network_image: ^3.2.1
+  # For managing network cached files
+  flutter_cache_manager: ^3.3.0
 
 dev_dependencies:
   flutter_test:
@@ -85,7 +87,7 @@ flutter:
     - assets/images/
     - assets/images/logo/
     - assets/images/intro/
-    - assets/images/default/
+    - assets/images/placeholder/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

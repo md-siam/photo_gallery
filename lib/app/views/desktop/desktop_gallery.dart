@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:icofont_flutter/icofont_flutter.dart';
 
@@ -64,8 +65,7 @@ class _DesktopGalleryState extends State<DesktopGallery> {
         fabIsVisible: _fabIsVisible,
         scrollController: _scrollController,
         onLeftIconTap: () {
-          //TODO: Delete cache files
-          print('Cache clean');
+          cleanCacheDesktop();
         },
         onRightIconTap: () {
           _scrollController.animateTo(0,
@@ -74,6 +74,15 @@ class _DesktopGalleryState extends State<DesktopGallery> {
         },
       ),
     );
+  }
+
+  /// methods for cleaning `Image Cache files`
+  ///
+  void cleanCacheDesktop() {
+    DefaultCacheManager().emptyCache();
+    imageCache.clear();
+    imageCache.clearLiveImages();
+    setState(() {});
   }
 }
 

@@ -31,7 +31,7 @@ class NormalFloatingActionButton extends StatelessWidget {
       return SnackBar(
         backgroundColor: Colors.black.withOpacity(0.4),
         content: const Text(
-          'Cache Cleaned',
+          'Image Cache Cleaned!',
           style: TextStyle(color: Colors.white),
         ),
         action: SnackBarAction(

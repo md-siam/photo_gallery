@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:icofont_flutter/icofont_flutter.dart';
 
@@ -98,8 +99,7 @@ class _TabletGalleryState extends State<TabletGallery> {
         fabIsVisible: _fabIsVisible,
         scrollController: _scrollController,
         onLeftIconTap: () {
-          //TODO: Delete cache files
-          print('Cache clean');
+          cleanCacheMobile() ;
         },
         onRightIconTap: () {
           _scrollController.animateTo(0,
@@ -109,6 +109,15 @@ class _TabletGalleryState extends State<TabletGallery> {
       ),
     );
   }
+  /// methods for cleaning `Image Cache files`
+  ///
+  void cleanCacheMobile() {
+    DefaultCacheManager().emptyCache();
+    imageCache.clear();
+    imageCache.clearLiveImages();
+    setState(() {});
+  }
+
 }
 
 /// this [StaggeredGridViewTablet] widget will execute
