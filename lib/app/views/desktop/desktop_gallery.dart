@@ -37,16 +37,28 @@ class _DesktopGalleryState extends State<DesktopGallery> {
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     final photoModel = Provider.of<MultiPhotoProvider>(context, listen: false);
     photoModel.getPhotoData();
 
-    _scrollController = ScrollController();
+    /// This listener will listen to the scroll position and will be
+    /// triggered at the end of the scroll for fetching more photos
+    /// Hence, provide the feel of `unlimited` photo scrolling,
+    ///
     _scrollController.addListener(() {
-      setState(() {
-        _fabIsVisible = _scrollController.position.userScrollDirection ==
-            ScrollDirection.forward;
-      });
+      //print('addListener');
+      if (_scrollController.position.maxScrollExtent ==
+          _scrollController.offset) {
+        photoModel.getMorePhotoData();
+      }
     });
+
+    /// This listener is for the [NormalFloatingActionButton] class
+    ///
+    // _scrollController.addListener(() {
+    //   _fabIsVisible = _scrollController.position.userScrollDirection ==
+    //       ScrollDirection.forward;
+    // });
   }
 
   @override
@@ -71,7 +83,7 @@ class _DesktopGalleryState extends State<DesktopGallery> {
       floatingActionButton: NormalFloatingActionButton(
         leftIcon: IcoFontIcons.uiDelete,
         rightIcon: IcoFontIcons.arrowUp,
-        fabIsVisible: _fabIsVisible,
+        fabIsVisible: true,
         scrollController: _scrollController,
         onLeftIconTap: () {
           cleanCacheDesktop();

@@ -57,19 +57,35 @@ class _TabletGalleryState extends State<TabletGallery> {
   @override
   void initState() {
     super.initState();
+    _scrollController = ScrollController();
     final photoModel = Provider.of<MultiPhotoProvider>(context, listen: false);
     photoModel.getPhotoData();
 
+    /// This listener will listen to the scroll position and will be
+    /// triggered at the end of the scroll for fetching more photos
+    /// Hence, provide the feel of `unlimited` photo scrolling,
+    ///
+    _scrollController.addListener(() {
+      //print('addListener');
+      if (_scrollController.position.maxScrollExtent ==
+          _scrollController.offset) {
+        photoModel.getMorePhotoData();
+      }
+    });
+
+    /// This `!kIsWeb` will check whether the app is running on web,
+    /// if not, the will check the internet connection
+    ///
     if (!kIsWeb) {
       _checkInternetConnection();
     }
-    _scrollController = ScrollController();
-    _scrollController.addListener(() {
-      setState(() {
-        _fabIsVisible = _scrollController.position.userScrollDirection ==
-            ScrollDirection.forward;
-      });
-    });
+    
+    /// This listener is for the [NormalFloatingActionButton] class
+    ///
+    // _scrollController.addListener(() {
+    //   _fabIsVisible = _scrollController.position.userScrollDirection ==
+    //       ScrollDirection.forward;
+    // });
   }
 
   @override
@@ -112,7 +128,7 @@ class _TabletGalleryState extends State<TabletGallery> {
       floatingActionButton: NormalFloatingActionButton(
         leftIcon: IcoFontIcons.uiDelete,
         rightIcon: IcoFontIcons.arrowUp,
-        fabIsVisible: _fabIsVisible,
+        fabIsVisible: true,
         scrollController: _scrollController,
         onLeftIconTap: () {
           cleanCacheMobile();

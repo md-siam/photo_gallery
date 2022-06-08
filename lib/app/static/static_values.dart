@@ -18,10 +18,10 @@ class StaticValues {
   static const String singleRandomPhotoUrl =
       'https://api.unsplash.com/photos/random/?client_id=$clientId';
 
-  static const String listOfPhotosUrl =
+  static const String listOf10PhotosUrl =
       'https://api.unsplash.com/photos/?client_id=$clientId';
 
-  static const String listOfRandomCountPhoto =
+  static const String listOfRandom30PhotosUrl =
       'https://api.unsplash.com/photos/random/?client_id=$clientId&count=$count';
 
   static const String queryOfPhotoList =

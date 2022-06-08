@@ -57,16 +57,20 @@ Packages from [pub.dev](https://pub.dev/):
   provider: ^6.0.3
 # For finding commonly used filesystem locations
   path_provider: ^2.0.10
-# For implementing the blurhash from the API
-  flutter_blurhash: ^0.7.0
 # For animated text
   animated_text_kit: ^4.2.2
 # For various grid layouts
   flutter_staggered_grid_view: ^0.6.1
+# For using new collection of icons
+  icofont_flutter: ^1.4.0
 # For saving images and videos in gallery
   gallery_saver: ^2.3.2
 # For sharing contents from Flutter app
   share_plus: ^4.0.6
+# For image caching & keeping them in cache directory
+  cached_network_image: ^3.2.1
+# For managing network cached files
+  flutter_cache_manager: ^3.3.0
 ```
 
 ## App Demo
@@ -79,41 +83,44 @@ lib
 │   ├── controllers
 │   │   └── dummy_controller.dart
 │   ├── layout
-│   │   ├── breakpoints.dart
 │   │   └── responsive_layout.dart
 │   ├── models
-│   │   ├── .DS_Store
 │   │   ├── photo_model.dart
 │   │   ├── profile_image_model.dart
 │   │   ├── urls_model.dart
 │   │   └── user_model.dart
+│   ├── providers
+│   │   └── photo_provider.dart
 │   ├── services
-│   │   └── internet_connection_checker.dart
+│   │   └── get_multiple_photo_data.dart
 │   ├── splash
 │   │   └── splash_view.dart
-│   ├── views
-│   │   ├── desktop
-│   │   │   ├── desktop_gallery.dart
-│   │   │   ├── desktop_interactive_view.dart
-│   │   │   └── desktop_view.dart
-│   │   ├── mobile
-│   │   │   ├── mobile_gallery.dart
-│   │   │   ├── mobile_interactive_view.dart
-│   │   │   └── mobile_view.dart
-│   │   ├── tablet
-│   │   │   ├── tablet_gallery.dart
-│   │   │   ├── tablet_interactive_view.dart
-│   │   │   └── tablet_view.dart
-│   │   ├── widgets
-│   │   │   ├── components
-│   │   │   │   ├── circular_button.dart
-│   │   │   │   └── glass_box.dart
-│   │   │   ├── animated_floating_action_button.dart
-│   │   │   ├── app_bar.dart
-│   │   │   └── image_tile.dart
-│   │   └── views.dart
-│   └── .DS_Store
-├── .DS_Store
+│   ├── static
+│   │   └── static_values.dart
+│   └── views
+│       ├── desktop
+│       │   ├── desktop_gallery.dart
+│       │   ├── desktop_interactive_view.dart
+│       │   └── desktop_view.dart
+│       ├── mobile
+│       │   ├── mobile_gallery.dart
+│       │   ├── mobile_interactive_view.dart
+│       │   └── mobile_view.dart
+│       ├── tablet
+│       │   ├── tablet_gallery.dart
+│       │   ├── tablet_interactive_view.dart
+│       │   └── tablet_view.dart
+│       ├── widgets
+│       │   ├── components
+│       │   │   ├── circular_button.dart
+│       │   │   └── glass_box.dart
+│       │   ├── animated_floating_action_button.dart
+│       │   ├── app_bar.dart
+│       │   ├── image_tile.dart
+│       │   ├── no_internet_connection.dart
+│       │   ├── normal_floating_action_button.dart
+│       │   └── widgets.dart
+│       └── views.dart
 ├── generated_plugin_registrant.dart
 └── main.dart
 ```

@@ -21,7 +21,7 @@ class MultiPhotoProvider extends ChangeNotifier {
     isLoading = true;
     List<PhotoModel>? morePhotoList = await getMultiplePhotoData();
     photoList!.addAll(morePhotoList);
-    print('Provider: ${photoList?.length}');
+    print('Provider: ${photoList?.length} photos');
     isLoading = false;
 
     notifyListeners();
