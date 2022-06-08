@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icofont_flutter/icofont_flutter.dart';
 
 import 'components/glass_box.dart';
 
@@ -40,13 +41,29 @@ class MyAppBar extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text(
-                        'Full Name:',
-                        style: textStyle,
+                      Row(
+                        children: [
+                          Text(
+                            'Full Name: ',
+                            style: textStyle,
+                          ),
+                          const Icon(IcoFontIcons.infoCircle)
+                        ],
                       ),
-                      Text(
-                        'Location:',
-                        style: textStyle.copyWith(color: Colors.grey),
+                      const SizedBox(height: 6.0),
+                      Row(
+                        children: [
+                          Text(
+                            'Location: ',
+                            style: textStyle.copyWith(
+                              color: Colors.grey,
+                            ),
+                          ),
+                          const Icon(
+                            IcoFontIcons.locationPin,
+                            color: Colors.grey,
+                          ),
+                        ],
                       ),
                     ],
                   ),

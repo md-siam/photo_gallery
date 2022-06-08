@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icofont_flutter/icofont_flutter.dart';
 
 import '../widgets/animated_floating_action_button.dart';
 import '../widgets/app_bar.dart';
@@ -92,9 +93,9 @@ class _DesktopInteractiveViewState extends State<DesktopInteractiveView>
               ),
             ),
             AnimatedFloatingActionButton(
-              icon1: Icons.email,
-              icon2: Icons.share_outlined,
-              icon3: Icons.download,
+              icon1: IcoFontIcons.refresh,
+              icon2: IcoFontIcons.share,
+              icon3: IcoFontIcons.download,
               icon1Background: Colors.green,
               icon2Background: Colors.orange,
               icon3Background: Colors.purple,

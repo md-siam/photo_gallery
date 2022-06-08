@@ -142,6 +142,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.1"
+  icofont_flutter:
+    dependency: "direct main"
+    description:
+      name: icofont_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.4.0"
   js:
     dependency: transitive
     description:
