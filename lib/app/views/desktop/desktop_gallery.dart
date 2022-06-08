@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../controllers/dummy_controller.dart';
@@ -15,7 +16,8 @@ class DesktopGallery extends StatefulWidget {
 }
 
 class _DesktopGalleryState extends State<DesktopGallery> {
-  final ScrollController _scrollController = ScrollController();
+  late final ScrollController _scrollController;
+  bool _fabIsVisible = false;
   static const pattern = [
     QuiltedGridTile(2, 2),
     QuiltedGridTile(1, 1),
@@ -28,6 +30,18 @@ class _DesktopGalleryState extends State<DesktopGallery> {
     QuiltedGridTile(1, 1),
     QuiltedGridTile(1, 1),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+    _scrollController.addListener(() {
+      setState(() {
+        _fabIsVisible = _scrollController.position.userScrollDirection ==
+            ScrollDirection.forward;
+      });
+    });
+  }
 
   @override
   void dispose() {
@@ -43,6 +57,10 @@ class _DesktopGalleryState extends State<DesktopGallery> {
         scrollController: _scrollController,
         pattern: pattern,
       ),
+      floatingActionButton: NormalFloatingActionButton(
+        fabIsVisible: _fabIsVisible,
+        scrollController: _scrollController,
+      ),
     );
   }
 }
@@ -52,7 +70,7 @@ class _DesktopGalleryState extends State<DesktopGallery> {
 class StaggeredGridViewDesktop extends StatelessWidget {
   final ScrollController _scrollController;
   final List<QuiltedGridTile> pattern;
-  
+
   const StaggeredGridViewDesktop({
     Key? key,
     required ScrollController scrollController,

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'components/circular_button.dart';
 
-/// This [AnimatedFloatingActionButton] class is custom button class which
-/// will return a floating action button for for the
+/// This [AnimatedFloatingActionButton] class is custom Floating Action Button
+/// class which will return a floating action button to the
 /// interactive view classes:
 /// [DesktopInteractiveView, MobileInteractiveView, TabletInteractiveView]
 ///

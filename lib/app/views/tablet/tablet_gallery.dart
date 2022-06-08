@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../controllers/dummy_controller.dart';
@@ -19,8 +20,9 @@ class TabletGallery extends StatefulWidget {
 }
 
 class _TabletGalleryState extends State<TabletGallery> {
-  final ScrollController _scrollController = ScrollController();
+  late final ScrollController _scrollController;
   bool _isConnected = false;
+  bool _fabIsVisible = false;
   static const pattern = [
     QuiltedGridTile(2, 2),
     QuiltedGridTile(1, 1),
@@ -55,6 +57,13 @@ class _TabletGalleryState extends State<TabletGallery> {
     if (!kIsWeb) {
       _checkInternetConnection();
     }
+    _scrollController = ScrollController();
+    _scrollController.addListener(() {
+      setState(() {
+        _fabIsVisible = _scrollController.position.userScrollDirection ==
+            ScrollDirection.forward;
+      });
+    });
   }
 
   @override
@@ -81,6 +90,10 @@ class _TabletGalleryState extends State<TabletGallery> {
                 scrollController: _scrollController,
                 pattern: pattern,
               ),
+      ),
+      floatingActionButton: NormalFloatingActionButton(
+        fabIsVisible: _fabIsVisible,
+        scrollController: _scrollController,
       ),
     );
   }
