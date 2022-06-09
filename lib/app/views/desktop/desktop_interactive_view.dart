@@ -105,12 +105,8 @@ class _DesktopInteractiveViewState extends State<DesktopInteractiveView>
                     boundaryMargin: const EdgeInsets.all(double.infinity),
                     maxScale: 50,
                     transformationController: _transformationController,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(5.0),
-                      child: Image.network(
-                        widget.regularImageUrl,
-                        fit: BoxFit.contain,
-                      ),
+                    child: InteractiveViewerImageTile(
+                      widget: widget.regularImageUrl,
                     ),
                   ),
                 ),

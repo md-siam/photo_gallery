@@ -55,7 +55,7 @@ class MyAppBar extends StatelessWidget {
                             '$username: ',
                             style: textStyle,
                           ),
-                          const Icon(IcoFontIcons.infoCircle)
+                          const Icon(IcoFontIcons.handRight)
                         ],
                       ),
                       const SizedBox(height: 6.0),

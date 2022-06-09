@@ -225,6 +225,7 @@ lib
 │       │   ├── animated_floating_action_button.dart
 │       │   ├── app_bar.dart
 │       │   ├── image_tile.dart
+│       │   ├── interactive_viewer_image_tile.dart
 │       │   ├── no_internet_connection.dart
 │       │   ├── normal_floating_action_button.dart
 │       │   └── widgets.dart

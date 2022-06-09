@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -105,12 +106,8 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
                     boundaryMargin: const EdgeInsets.all(double.infinity),
                     maxScale: 50,
                     transformationController: _transformationController,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(5.0),
-                      child: Image.network(
-                        widget.regularImageUrl,
-                        fit: BoxFit.contain,
-                      ),
+                    child: InteractiveViewerImageTile(
+                      widget: widget.regularImageUrl,
                     ),
                   ),
                 ),
@@ -140,9 +137,7 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
                 _animateResetInitialize();
               },
               onIcon2Tap: () {
-                (!kIsWeb)
-                    ? _shareAPhoto()
-                    : log('Share does not work in web');
+                (!kIsWeb) ? _shareAPhoto() : log('Share does not work in web');
               },
               onIcon3Tap: () {
                 // TODO: Image download functionality
@@ -155,3 +150,4 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
     );
   }
 }
+
