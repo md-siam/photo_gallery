@@ -149,6 +149,7 @@ class StaggeredGridViewDesktop extends StatelessWidget {
           location:
               // ignore: unnecessary_string_interpolations
               '${photoModel.photoList?[index].user?.location ?? 'Unknown'}',
+          blurHash: '${photoModel.photoList?[index].blurHash}',
           userImageUrl:
               '${photoModel.photoList?[index].user?.profileImage?.large}',
           thumbnailUrl: '${photoModel.photoList?[index].urls?.regular}',

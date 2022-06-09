@@ -71,6 +71,8 @@ Packages from [pub.dev](https://pub.dev/):
   cached_network_image: ^3.2.1
 # For managing network cached files
   flutter_cache_manager: ^3.3.0
+# For using the blur hash from unsplash API
+  flutter_blurhash: ^0.7.0
 ```
 
 ## Features & Implementations
@@ -188,6 +190,8 @@ lib
 ├── app
 │   ├── controllers
 │   │   └── dummy_controller.dart
+│   ├── helper
+│   │   └── web_image_download_helper.dart
 │   ├── layout
 │   │   └── responsive_layout.dart
 │   ├── models

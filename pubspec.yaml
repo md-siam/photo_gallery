@@ -59,6 +59,8 @@ dependencies:
   cached_network_image: ^3.2.1
   # For managing network cached files
   flutter_cache_manager: ^3.3.0
+  # For using the blur hash from unsplash API
+  flutter_blurhash: ^0.7.0
 
 dev_dependencies:
   flutter_test:

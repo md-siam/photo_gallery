@@ -19,6 +19,7 @@ class ImageTile extends StatelessWidget {
   final int height;
   final String username;
   final String location;
+  final String blurHash;
   final String userImageUrl;
   final String thumbnailUrl;
   final String fullResolutionImageUrl;
@@ -30,6 +31,7 @@ class ImageTile extends StatelessWidget {
     required this.height,
     required this.username,
     required this.location,
+    required this.blurHash,
     required this.userImageUrl,
     required this.thumbnailUrl,
     required this.fullResolutionImageUrl,
@@ -47,18 +49,21 @@ class ImageTile extends StatelessWidget {
                 username: username,
                 location: location,
                 userImageUrl: userImageUrl,
-                regularImageUrl: fullResolutionImageUrl,
+                imageBlurHash: blurHash,
+                regularImageUrl: fullResolutionImageUrl, 
               ),
               tabletBody: TabletInteractiveView(
                 username: username,
                 location: location,
                 userImageUrl: userImageUrl,
+                imageBlurHash: blurHash,
                 regularImageUrl: fullResolutionImageUrl,
               ),
               desktopBody: DesktopInteractiveView(
                 username: username,
                 location: location,
                 userImageUrl: userImageUrl,
+                imageBlurHash: blurHash,
                 regularImageUrl: fullResolutionImageUrl,
               ),
             ),

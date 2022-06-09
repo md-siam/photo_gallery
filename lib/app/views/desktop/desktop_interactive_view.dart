@@ -18,12 +18,14 @@ class DesktopInteractiveView extends StatefulWidget {
   final String username;
   final String location;
   final String userImageUrl;
+  final String imageBlurHash;
   final String regularImageUrl;
   const DesktopInteractiveView({
     Key? key,
     required this.username,
     required this.location,
     required this.userImageUrl,
+    required this.imageBlurHash,
     required this.regularImageUrl,
   }) : super(key: key);
 
@@ -140,7 +142,8 @@ class _DesktopInteractiveViewState extends State<DesktopInteractiveView>
                     maxScale: 50,
                     transformationController: _transformationController,
                     child: InteractiveViewerImageTile(
-                      widget: widget.regularImageUrl,
+                      blurHash: widget.imageBlurHash,
+                      imageUrl: widget.regularImageUrl,
                     ),
                   ),
                 ),
