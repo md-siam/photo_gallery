@@ -70,7 +70,6 @@ class _DesktopGalleryState extends State<DesktopGallery> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Desktop')),
       body: Consumer<MultiPhotoProvider>(builder: (context, photoModel, child) {
         return photoModel.isLoading
             ? const Center(child: CircularProgressIndicator())

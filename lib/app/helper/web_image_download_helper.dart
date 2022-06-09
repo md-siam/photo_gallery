@@ -3,7 +3,7 @@
 /// the `downloadAPhotoOnDesktop()` function
 ///
 import 'dart:developer';
-//import 'dart:html' show AnchorElement; // <-  Comment this import too
+// import 'dart:html' show AnchorElement; // <-  Comment this import too
 
 /// uncomment only for [web app]
 ///
