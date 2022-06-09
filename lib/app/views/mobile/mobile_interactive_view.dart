@@ -1,15 +1,14 @@
 import 'dart:developer';
-// Comment this package while developing for iOS or Android
-//import 'dart:html';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:gallery_saver/gallery_saver.dart';
 import 'package:flutter/material.dart';
+import 'package:gallery_saver/gallery_saver.dart';
 import 'package:icofont_flutter/icofont_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../../helper/web_image_download_helper.dart';
 import '../widgets/widgets.dart';
 
 /// This [MobileInteractiveView] class will display one image with
@@ -91,7 +90,7 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
         SnackBar(
           backgroundColor: Colors.white.withOpacity(0.4),
           content: const Text(
-            'Downloaded to Photo Gallery!',
+            'Downloaded to your Photo Gallery!',
             style: TextStyle(color: Colors.white),
           ),
           action: SnackBarAction(
@@ -106,20 +105,6 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
     } catch (e) {
       log(e.toString());
     }
-  }
-
-  /// uncomment only for [web app]
-  ///
-  void _downloadAPhotoOnDesktop() {
-    String url = widget.regularImageUrl;
-
-    // try {
-    //   AnchorElement anchorElement = AnchorElement(href: url);
-    //   anchorElement.download = "flutter_logo";
-    //   anchorElement.click();
-    // } catch (e) {
-    //   log(e.toString());
-    // }
   }
 
   @override
@@ -194,7 +179,7 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
               onIcon3Tap: () {
                 (!kIsWeb)
                     ? _downloadAPhotoOnMobile()
-                    : _downloadAPhotoOnDesktop();
+                    : downloadAPhotoOnWeb(widget.regularImageUrl);
               },
             ),
           ],
