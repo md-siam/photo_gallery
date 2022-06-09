@@ -75,94 +75,111 @@ Packages from [pub.dev](https://pub.dev/):
 
 ## Features & Implementations
 
-<p align="center">
-  <table style="width:100%">
-    <tr>
-      <th align="center">Features</th>
-      <th align="center">Implementations</th>
-      <th align="center">Why?</th>
-    </tr>
-    <tr>
-      <td>Using Unsplash API for `Photos` list</td>
-      <td align="center">✅ &nbsp;&nbsp; Done!</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Photo gallery UI</td>
-      <td align="center">✅ &nbsp;&nbsp; Done!</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Full-screen photo view</td>
-      <td align="center">✅ &nbsp;&nbsp; Done!</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Infinite scroll on the gallery screen</td>
-      <td align="center">✅ &nbsp;&nbsp; Done!</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Optimized UI design</td>
-      <td align="center">✅ &nbsp;&nbsp; Done!</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Cross-platform support<br>Support: iOS, Android & Web</td>
-      <td align="center">✅ &nbsp;&nbsp; Done!</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Unit tests</td>
-      <td align="center">❌ &nbsp;&nbsp; Not Done!</td>
-      <td align="center">Not enough time.<br>Hence, left it for the SQA engineer.</td>
-    </tr>
-    <tr>
-      <td>Cache images</td>
-      <td align="center">✅ &nbsp;&nbsp; Done!</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Cache API response</td>
-      <td align="center">✅ &nbsp;&nbsp; Done!</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Allow saving photos in JPEG format</td>
-      <td align="center">✅ &nbsp;&nbsp; Done!</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Allow sharing the photo</td>
-      <td align="center">✅ &nbsp;&nbsp; Done!</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Proper git commit message</td>
-      <td align="center">✅ &nbsp;&nbsp; Done!</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Documentations in all the dart files</td>
-      <td align="center">✅ &nbsp;&nbsp; Done!</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Production ready</td>
-      <td align="center">😕 &nbsp;&nbsp; Not 100% ready!</td>
-      <td>
-      It requires:<br>
-      ⓵&nbsp;&nbsp;Unit testing<br>
-      ⓶&nbsp;&nbsp;Widget testing<br>
-      ⓷&nbsp;&nbsp;Integration testing<br>
-      ⓸&nbsp;&nbsp;More code refactoring</td>
-    </tr>
-  </table>
-</p>
+<table align="center" style="margin: 0px auto;">
+  <tr>
+    <th align="center">Features</th>
+    <th align="center">Implementations</th>
+    <th align="center">Why?</th>
+  </tr>
+  <tr>
+    <td>Using Unsplash API for `Photos` list</td>
+    <td align="center">✅ &nbsp;&nbsp; Done!</td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td>Photo gallery UI</td>
+    <td align="center">✅ &nbsp;&nbsp; Done!</td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td>Full-screen photo view</td>
+    <td align="center">✅ &nbsp;&nbsp; Done!</td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td>Infinite scroll on the gallery screen</td>
+    <td align="center">✅ &nbsp;&nbsp; Done!</td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td>Optimized UI design</td>
+    <td align="center">✅ &nbsp;&nbsp; Done!</td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td>Cross-platform support<br>Support: iOS, Android & Web</td>
+    <td align="center">✅ &nbsp;&nbsp; Done!</td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td>Unit tests</td>
+    <td align="center">❌ &nbsp;&nbsp; Not Done!</td>
+    <td align="center">Not enough time.<br>Hence, left it for the SQA engineer.</td>
+  </tr>
+  <tr>
+    <td>Cache images</td>
+    <td align="center">✅ &nbsp;&nbsp; Done!</td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td>Cache API response</td>
+    <td align="center">✅ &nbsp;&nbsp; Done!</td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td>Allow saving photos in JPEG format</td>
+    <td align="center">✅ &nbsp;&nbsp; Done!</td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td>Allow sharing the photo</td>
+    <td align="center">✅ &nbsp;&nbsp; Done!</td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td>Proper git commit message</td>
+    <td align="center">✅ &nbsp;&nbsp; Done!</td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td>Documentations in all the dart files</td>
+    <td align="center">✅ &nbsp;&nbsp; Done!</td>
+    <td align="center">-</td>
+  </tr>
+  <tr>
+    <td>Production ready</td>
+    <td align="center">😕 &nbsp;&nbsp; Not 100% ready!</td>
+    <td>
+    It requires:<br>
+    ⓵&nbsp;&nbsp;Unit testing<br>
+    ⓶&nbsp;&nbsp;Widget testing<br>
+    ⓷&nbsp;&nbsp;Integration testing<br>
+    ⓸&nbsp;&nbsp;More code refactoring</td>
+  </tr>
+</table>
+
 
 
 ## App Demo
-
+<table align="center" style="margin: 0px auto;">
+  <tr>
+    <th>Light Mode (iOS Simulator)</th>
+    <th>Dark Mode (Android Emulator)</th>
+  </tr>
+  <tr>
+    <td><img align="right" src="screenshots/gifs/lightMode.gif" height="500"></img></td>
+    <td><img align="right" src="screenshots/gifs/darkMode.gif" height="500"></img></td>
+  </tr>
+  </table>
+  <br>
+<table align="center" style="margin: 0px auto;">
+  <tr>
+    <th>Google Chrome</th>
+  </tr>
+  <tr>
+    <td><img align="right" src="screenshots/gifs/google_chrome.gif"></img></td>
+  </tr>
+  </table>
 
 ## File Pattern Inside The `lib` Folder
 
