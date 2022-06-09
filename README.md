@@ -160,17 +160,23 @@ Packages from [pub.dev](https://pub.dev/):
   </tr>
 </table>
 
+## APK File & Web App Link
 
+<p align="center">
+    <a href="https://drive.google.com/file/d/1Kq4QDnCmo6MGl12CU5wLeSDYCr3N5LA1/view?usp=sharing" target="_blank"><img src="screenshots/download_apk/download.png" height="100" ></img></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://md-siam.github.io/photo_gallery_web/" target="_blank"><img src="screenshots/web_app/web_app.png" height="100" ></img></a>
+</p>
 
 ## App Demo
+
 <table align="center" style="margin: 0px auto;">
   <tr>
     <th>iOS Simulator</th>
     <th>Android Emulator</th>
   </tr>
   <tr>
-    <td><img align="right" src="screenshots/gifs/lightMode.gif" height="500"></img></td>
-    <td><img align="right" src="screenshots/gifs/darkMode.gif" height="500"></img></td>
+    <td><img align="right" src="screenshots/gif/ios_simulator.gif" height="500"></img></td>
+    <td><img align="right" src="screenshots/gif/android_emulator.gif" height="500"></img></td>
   </tr>
   </table>
   <br>
@@ -179,7 +185,7 @@ Packages from [pub.dev](https://pub.dev/):
     <th>Google Chrome</th>
   </tr>
   <tr>
-    <td><img align="right" src="screenshots/gifs/google_chrome.gif"></img></td>
+    <td><img align="right" src="screenshots/gif/google_chrome.gif"></img></td>
   </tr>
   </table>
 
