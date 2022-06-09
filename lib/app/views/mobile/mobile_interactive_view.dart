@@ -1,8 +1,8 @@
 import 'dart:developer';
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:gallery_saver/gallery_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:icofont_flutter/icofont_flutter.dart';
 import 'package:path_provider/path_provider.dart';
@@ -74,6 +74,45 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
     }
   }
 
+  void _downloadAPhotoOnMobile() async {
+    String url = widget.regularImageUrl;
+
+    try {
+      final tempDir = await getTemporaryDirectory();
+      final path = '${tempDir.path}/imageUrl.jpg';
+      await Dio().download(url, path);
+
+      await GallerySaver.saveImage(path, toDcim: true);
+
+      // ignore: use_build_context_synchronously
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          backgroundColor: Colors.white.withOpacity(0.4),
+          content: const Text(
+            'Downloaded to Photo Gallery!',
+            style: TextStyle(color: Colors.white),
+          ),
+          action: SnackBarAction(
+            label: 'Close',
+            textColor: Colors.orange,
+            onPressed: () {
+              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+            },
+          ),
+        ),
+      );
+    } catch (e) {
+      log(e.toString());
+    }
+  }
+
+  void _downloadAPhotoOnDesktop() {
+    try {} catch (e) {
+      log(e.toString());
+    }
+    print('Desktop');
+  }
+
   @override
   void initState() {
     super.initState();
@@ -131,8 +170,8 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
               icon2Background: Colors.orange,
               icon3Background: Colors.purple,
               icon1SnackBarMessage: 'Zoom Reset',
-              icon2SnackBarMessage: 'Waiting..',
-              icon3SnackBarMessage: 'Download Complete',
+              icon2SnackBarMessage: 'Wait till the share dialog popup up!',
+              icon3SnackBarMessage: 'Wait till the download complete!',
               onIcon1Tap: () {
                 _animateResetInitialize();
               },
@@ -140,8 +179,9 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
                 (!kIsWeb) ? _shareAPhoto() : log('Share does not work in web');
               },
               onIcon3Tap: () {
-                // TODO: Image download functionality
-                debugPrint('Third Button');
+                (!kIsWeb)
+                    ? _downloadAPhotoOnMobile()
+                    : _downloadAPhotoOnDesktop();
               },
             ),
           ],
@@ -150,4 +190,3 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
     );
   }
 }
-
