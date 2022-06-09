@@ -8,7 +8,7 @@ import '../static/static_values.dart';
 Future<List<PhotoModel>> getMultiplePhotoData() async {
   List<PhotoModel> resultList = [];
   try {
-    Response response = await Dio().get(StaticValues.listOf10PhotosUrl);
+    Response response = await Dio().get(StaticValues.listOf10FixedPhotosUrl);
 
     //print('Response: ${response.data}');
     //print(response.statusCode);

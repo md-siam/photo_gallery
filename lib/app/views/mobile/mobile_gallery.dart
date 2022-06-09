@@ -9,6 +9,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:icofont_flutter/icofont_flutter.dart';
 import 'package:provider/provider.dart';
 
+import '../../notifier/fab_visibility_notifier.dart';
 import '../../providers/photo_provider.dart';
 import '../widgets/widgets.dart';
 
@@ -25,7 +26,6 @@ class MobileGallery extends StatefulWidget {
 class _MobileGalleryState extends State<MobileGallery> {
   late final ScrollController _scrollController;
   bool _isConnected = false;
-  bool _fabIsVisible = false;
   static const pattern = [
     QuiltedGridTile(2, 2),
     QuiltedGridTile(1, 1),
@@ -67,12 +67,14 @@ class _MobileGalleryState extends State<MobileGallery> {
       if (_scrollController.position.maxScrollExtent ==
           _scrollController.offset) {
         photoModel.getMorePhotoData();
+
+        fabVisibleState.isFabVisible.value = false;
+      } else if (_scrollController.position.userScrollDirection ==
+          ScrollDirection.forward) {
+        fabVisibleState.isFabVisible.value = true;
+      } else {
+        fabVisibleState.isFabVisible.value = false;
       }
-      
-      // setState(() {
-      //   _fabIsVisible = _scrollController.position.userScrollDirection ==
-      //       ScrollDirection.forward;
-      // });
     });
 
     /// This `!kIsWeb` will check whether the app is running on web,
@@ -81,13 +83,6 @@ class _MobileGalleryState extends State<MobileGallery> {
     if (!kIsWeb) {
       _checkInternetConnection();
     }
-
-    /// This listener is for the [NormalFloatingActionButton] class
-    ///
-    // _scrollController.addListener(() {
-    //   _fabIsVisible = _scrollController.position.userScrollDirection ==
-    //       ScrollDirection.forward;
-    // });
   }
 
   @override
@@ -128,18 +123,23 @@ class _MobileGalleryState extends State<MobileGallery> {
                       );
               }),
       ),
-      floatingActionButton: NormalFloatingActionButton(
-        leftIcon: IcoFontIcons.uiDelete,
-        rightIcon: IcoFontIcons.arrowUp,
-        fabIsVisible: true,
-        scrollController: _scrollController,
-        onLeftIconTap: () {
-          cleanCacheMobile();
-        },
-        onRightIconTap: () {
-          _scrollController.animateTo(0,
-              duration: const Duration(milliseconds: 500),
-              curve: Curves.easeIn);
+      floatingActionButton: ValueListenableBuilder(
+        valueListenable: fabVisibleState.isFabVisible,
+        builder: (BuildContext context, dynamic notifiedValue, Widget? child) {
+          return NormalFloatingActionButton(
+            leftIcon: IcoFontIcons.uiDelete,
+            rightIcon: IcoFontIcons.arrowUp,
+            fabIsVisible: notifiedValue,
+            scrollController: _scrollController,
+            onLeftIconTap: () {
+              cleanCacheMobile();
+            },
+            onRightIconTap: () {
+              _scrollController.animateTo(0,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeIn);
+            },
+          );
         },
       ),
     );

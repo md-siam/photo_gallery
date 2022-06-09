@@ -5,6 +5,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:icofont_flutter/icofont_flutter.dart';
 import 'package:provider/provider.dart';
 
+import '../../notifier/fab_visibility_notifier.dart';
 import '../../providers/photo_provider.dart';
 import '../widgets/widgets.dart';
 
@@ -20,7 +21,6 @@ class DesktopGallery extends StatefulWidget {
 
 class _DesktopGalleryState extends State<DesktopGallery> {
   late final ScrollController _scrollController;
-  bool _fabIsVisible = false;
   static const pattern = [
     QuiltedGridTile(2, 2),
     QuiltedGridTile(1, 1),
@@ -50,15 +50,15 @@ class _DesktopGalleryState extends State<DesktopGallery> {
       if (_scrollController.position.maxScrollExtent ==
           _scrollController.offset) {
         photoModel.getMorePhotoData();
+
+        fabVisibleState.isFabVisible.value = false;
+      } else if (_scrollController.position.userScrollDirection ==
+          ScrollDirection.forward) {
+        fabVisibleState.isFabVisible.value = true;
+      } else {
+        fabVisibleState.isFabVisible.value = false;
       }
     });
-
-    /// This listener is for the [NormalFloatingActionButton] class
-    ///
-    // _scrollController.addListener(() {
-    //   _fabIsVisible = _scrollController.position.userScrollDirection ==
-    //       ScrollDirection.forward;
-    // });
   }
 
   @override
@@ -80,18 +80,23 @@ class _DesktopGalleryState extends State<DesktopGallery> {
                 photoModel: photoModel,
               );
       }),
-      floatingActionButton: NormalFloatingActionButton(
-        leftIcon: IcoFontIcons.uiDelete,
-        rightIcon: IcoFontIcons.arrowUp,
-        fabIsVisible: true,
-        scrollController: _scrollController,
-        onLeftIconTap: () {
-          cleanCacheDesktop();
-        },
-        onRightIconTap: () {
-          _scrollController.animateTo(0,
-              duration: const Duration(milliseconds: 500),
-              curve: Curves.easeIn);
+      floatingActionButton: ValueListenableBuilder(
+        valueListenable: fabVisibleState.isFabVisible,
+        builder: (BuildContext context, dynamic notifiedValue, Widget? child) {
+          return NormalFloatingActionButton(
+            leftIcon: IcoFontIcons.uiDelete,
+            rightIcon: IcoFontIcons.arrowUp,
+            fabIsVisible: notifiedValue,
+            scrollController: _scrollController,
+            onLeftIconTap: () {
+              cleanCacheDesktop();
+            },
+            onRightIconTap: () {
+              _scrollController.animateTo(0,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeIn);
+            },
+          );
         },
       ),
     );

@@ -163,8 +163,8 @@ Packages from [pub.dev](https://pub.dev/):
 ## App Demo
 <table align="center" style="margin: 0px auto;">
   <tr>
-    <th>Light Mode (iOS Simulator)</th>
-    <th>Dark Mode (Android Emulator)</th>
+    <th>iOS Simulator</th>
+    <th>Android Emulator</th>
   </tr>
   <tr>
     <td><img align="right" src="screenshots/gifs/lightMode.gif" height="500"></img></td>
@@ -195,6 +195,8 @@ lib
 │   │   ├── profile_image_model.dart
 │   │   ├── urls_model.dart
 │   │   └── user_model.dart
+│   ├── notifier
+│   │   └── fab_visibility_notifier.dart
 │   ├── providers
 │   │   └── photo_provider.dart
 │   ├── services

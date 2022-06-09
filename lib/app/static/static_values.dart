@@ -9,19 +9,19 @@ class StaticValues {
   /// For APIs
   static const String apiUrl = 'https://api.unsplash.com';
   static const String clientId = '7VyxP-oqEk5W2UG87t9VBD9UlkNsA8adiZjKlqdWNg8';
-  static const String count = '30'; // max limit per call
+  static const String count = '30'; // max photo limit par call
   static const String query = 'london';
 
-  static const String singlePhotoUrl =
+  static const String singleFixedPhotoUrl =
       '$apiUrl/photos/m3JzVzNadfE/?client_id=$clientId';
 
   static const String singleRandomPhotoUrl =
       '$apiUrl/photos/random/?client_id=$clientId';
 
-  static const String listOf10PhotosUrl =
+  static const String listOf10FixedPhotosUrl =
       '$apiUrl/photos/?client_id=$clientId';
 
-  static const String listOfRandom30PhotosUrl =
+  static const String listOf30RandomPhotosUrl =
       '$apiUrl/photos/random/?client_id=$clientId&count=$count';
 
   static const String queryForPhotoListUrl =
