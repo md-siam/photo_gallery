@@ -1,4 +1,6 @@
 import 'dart:developer';
+// ignore: avoid_web_libraries_in_flutter
+//import 'dart:html';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
@@ -106,11 +108,18 @@ class _MobileInteractiveViewState extends State<MobileInteractiveView>
     }
   }
 
+  /// uncomment only for [web app]
+  ///
   void _downloadAPhotoOnDesktop() {
-    try {} catch (e) {
-      log(e.toString());
-    }
-    print('Desktop');
+    String url = widget.regularImageUrl;
+
+    // try {
+    //   AnchorElement anchorElement = AnchorElement(href: url);
+    //   anchorElement.download = "flutter_logo";
+    //   anchorElement.click();
+    // } catch (e) {
+    //   log(e.toString());
+    // }
   }
 
   @override
