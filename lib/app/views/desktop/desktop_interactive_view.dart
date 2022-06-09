@@ -1,5 +1,5 @@
 import 'dart:developer';
-// ignore: avoid_web_libraries_in_flutter
+// Comment this package while developing for iOS or Android
 // import 'dart:html';
 
 import 'package:dio/dio.dart';
@@ -179,13 +179,17 @@ class _DesktopInteractiveViewState extends State<DesktopInteractiveView>
               icon2Background: Colors.orange,
               icon3Background: Colors.purple,
               icon1SnackBarMessage: 'Zoom Reset!',
-              icon2SnackBarMessage: 'Wait till the share dialog popup up!',
+              icon2SnackBarMessage: (!kIsWeb)
+                  ? 'Wait till the share dialog pop up!'
+                  : 'File sharing does not support web',
               icon3SnackBarMessage: 'Wait till the download complete!',
               onIcon1Tap: () {
                 _animateResetInitialize();
               },
               onIcon2Tap: () {
-                (!kIsWeb) ? _shareAPhoto() : log('Share does not work in web');
+                (!kIsWeb)
+                    ? _shareAPhoto()
+                    : log('File sharing does not support web');
               },
               onIcon3Tap: () {
                 (!kIsWeb)
