@@ -192,44 +192,44 @@ Packages from [pub.dev](https://pub.dev/):
 ## File Pattern Inside The `lib` Folder
 
 ```
-lib
-├── app
-│   ├── controllers
+lib/
+├── app/
+│   ├── controllers/
 │   │   └── dummy_controller.dart
-│   ├── helper
+│   ├── helper/
 │   │   └── web_image_download_helper.dart
-│   ├── layout
+│   ├── layout/
 │   │   └── responsive_layout.dart
-│   ├── models
+│   ├── models/
 │   │   ├── photo_model.dart
 │   │   ├── profile_image_model.dart
 │   │   ├── urls_model.dart
 │   │   └── user_model.dart
-│   ├── notifier
+│   ├── notifier/
 │   │   └── fab_visibility_notifier.dart
-│   ├── providers
+│   ├── providers/
 │   │   └── photo_provider.dart
-│   ├── services
+│   ├── services/
 │   │   └── get_multiple_photo_data.dart
-│   ├── splash
+│   ├── splash/
 │   │   └── splash_view.dart
-│   ├── static
+│   ├── static/
 │   │   └── static_values.dart
-│   └── views
-│       ├── desktop
+│   └── views/
+│       ├── desktop/
 │       │   ├── desktop_gallery.dart
 │       │   ├── desktop_interactive_view.dart
 │       │   └── desktop_view.dart
-│       ├── mobile
+│       ├── mobile/
 │       │   ├── mobile_gallery.dart
 │       │   ├── mobile_interactive_view.dart
 │       │   └── mobile_view.dart
-│       ├── tablet
+│       ├── tablet/
 │       │   ├── tablet_gallery.dart
 │       │   ├── tablet_interactive_view.dart
 │       │   └── tablet_view.dart
-│       ├── widgets
-│       │   ├── components
+│       ├── widgets/
+│       │   ├── components/
 │       │   │   ├── circular_button.dart
 │       │   │   └── glass_box.dart
 │       │   ├── animated_floating_action_button.dart
