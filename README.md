@@ -13,7 +13,8 @@ In this assignment, you are required to create a simple Android / iOS / Flutter 
 
 ```
 Requirements:
-    1. Use Unsplash API Documentation | List of Photos to get a list of photos and build a gallery of photos
+    1. Use Unsplash API Documentation | List of Photos to get a list of photos and build a
+        gallery of photos
     2. The user can tap the photo and can see a full-screen view of the photo
     3. The user has an infinite scroll on the gallery screen
 
@@ -23,7 +24,8 @@ User Interface (UI)
 
 Extra credits
     You are encouraged to extend this project and add features as you see fit.
-    Our suggestion is that these extensions should add to, not subtract from, the user's experience.
+    Our suggestion is that these extensions should add to, not subtract from, the user's
+    experience.
     1. Unit tests
     2. The app’s flavor/scheme can be changed easily so that changing from development API
         to production API becomes trivial
