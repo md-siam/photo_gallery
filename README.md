@@ -52,29 +52,29 @@ Quicksand: https://fonts.google.com/specimen/Quicksand
 
 Packages from [pub.dev](https://pub.dev/):
 
-```
+```yaml
 # For API calls & image downloading
-  dio: ^4.0.6
+dio: ^4.0.6
 # For state management
-  provider: ^6.0.3
+provider: ^6.0.3
 # For finding commonly used filesystem locations
-  path_provider: ^2.0.10
+path_provider: ^2.0.10
 # For animated text
-  animated_text_kit: ^4.2.2
+animated_text_kit: ^4.2.2
 # For various grid layouts
-  flutter_staggered_grid_view: ^0.6.1
+flutter_staggered_grid_view: ^0.6.1
 # For using new collection of icons
-  icofont_flutter: ^1.4.0
+icofont_flutter: ^1.4.0
 # For saving images and videos in gallery
-  gallery_saver: ^2.3.2
+gallery_saver: ^2.3.2
 # For sharing contents from Flutter app
-  share_plus: ^4.0.6
+share_plus: ^4.0.6
 # For image caching & keeping them in cache directory
-  cached_network_image: ^3.2.1
+cached_network_image: ^3.2.1
 # For managing network cached files
-  flutter_cache_manager: ^3.3.0
+flutter_cache_manager: ^3.3.0
 # For using the blur hash from unsplash API
-  flutter_blurhash: ^0.7.0
+flutter_blurhash: ^0.7.0
 ```
 
 ## Features & Implementations
